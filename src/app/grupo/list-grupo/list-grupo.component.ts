@@ -85,4 +85,13 @@ export class ListGrupoComponent implements OnInit {
     });
   }
 
+  public inativar2(grupo: any): void {
+    let self = this;
+
+    grupo.situacao.id = 2;
+    grupo.situacao.descricao = 'Inativo';
+    self.ngOnInit();
+    self.messageService.addMsgInf('Grupo inativado com sucesso!');
+  }
+
 }

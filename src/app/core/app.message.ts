@@ -16,8 +16,8 @@ export class MessageResourceImpl implements MessageResource, ValidationResource 
         this.resource = {
           'required': 'Campo de preenchimento obrigatório.',
 
-          'LABEL_CONFIRM_TITLE': 'Confirmação',
-          'LABEL_CONFIRM_OK': 'Ok',
+          'LABEL_CONFIRM_TITLE': 'CONFIRMAÇÃO',
+          'LABEL_CONFIRM_OK': 'OK',
           'LABEL_CONFIRM_YES': 'Sim',
           'LABEL_CONFIRM_NO': 'Não',
 

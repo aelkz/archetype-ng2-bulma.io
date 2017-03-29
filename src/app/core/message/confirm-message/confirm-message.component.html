@@ -2,9 +2,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
 
-      <h5 class="modal-header">{{'LABEL_CONFIRM_TITLE' | i18n}}</h5>
+      <h5 class="modal-header">
+        {{'LABEL_CONFIRM_TITLE' | i18n}}
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </h5>
       <div class="modal-body">{{item.msg}}</div>
       <div class="modal-footer">
+
         <div class="text-center" *ngIf="item.isConfirmTypeOk()">
           <button type="button" class="btn btn-primary" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_OK' | i18n}}</button>
         </div>

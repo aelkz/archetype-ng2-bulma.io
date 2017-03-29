@@ -15,6 +15,8 @@ import { AcessoModule } from './core/acesso/acesso.module';
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.router';
 
+import { SweetAlert2Module } from '@toverux/ngsweetalert2';
+
 /**
  * Modulo principal da aplicação.
  */
@@ -30,7 +32,8 @@ import { AppRouting } from './app.router';
     AcessoModule,
     BrowserModule,
     HttpModule,
-    AppRouting
+    AppRouting,
+    SweetAlert2Module
   ],
   bootstrap: [AppComponent],
   providers: [{
