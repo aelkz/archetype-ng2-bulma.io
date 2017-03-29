@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 
-import { AcaoSistema } from '../../core/app.acao';
+import { AcaoSistema } from '../../app.acao';
 import { GrupoService } from '../grupo.service';
 import { MessageService } from '../../core/message/message.service';
 
@@ -35,6 +35,8 @@ export class FormGrupoComponent {
     this.grupoService = grupoService;
     this.acao = new AcaoSistema(route);
     this.messageService = messageService;
+
+    console.log(this.acao);
 
     let id = route.snapshot.params['id'];
     this.inicializarGrupo(id);

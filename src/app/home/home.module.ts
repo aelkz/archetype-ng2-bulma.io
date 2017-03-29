@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MessageModule } from '../core/message/message.module';
 import { HomeComponent } from './home.component';
 import { GrupoModule } from '../grupo/grupo.module';
-import { PerfilModule } from '../core/perfil/perfil.module';
+import { PerfilModule } from '../perfil/perfil.module';
 
 @NgModule({
   imports: [

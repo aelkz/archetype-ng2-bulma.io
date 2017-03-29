@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ModuleWithProviders } from '@angular/core';
 
 import { GrupoService } from '../grupo/grupo.service';
-import { PerfilService } from './perfil/perfil.service';
+import { PerfilService } from '../perfil/perfil.service';
 
 /**
  * Modulo responsável por prover os serviços de integração a 'Web Api'.

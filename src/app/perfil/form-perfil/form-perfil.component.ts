@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 
-import { AcaoSistema } from '../../app.acao';
+import { AcaoSistema } from '../../../app.acao';
 import { PerfilService } from '../perfil.service';
 import { MessageService } from '../../message/message.service';
 

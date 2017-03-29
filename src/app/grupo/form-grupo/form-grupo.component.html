@@ -14,6 +14,7 @@
         <label for="inputNome" class="required">{{'LABEL_NOME' | i18n}}:</label>
         <input id="inputNome" type="text" class="form-control" title="{{'LABEL_NOME' | i18n}}" [(ngModel)]="grupo.nome" #grupoNome="ngModel"
           name="nome" required maxlength="50" [disabled]="acao.isAcaoVisualizar()">
+
         <validation-message [for]="grupoNome" [form]="formGrupo"></validation-message>
       </div>
     </div>
@@ -37,13 +38,13 @@
 
         <button type="submit" class="btn btn-success pull-right" title="{{'LABEL_SALVAR' | i18n}}">
             <i class="fa fa-plus" aria-hidden="true"></i>
-            <span>{{'LABEL_SALVAR' | i18n}}</span>  
+            <span>{{'LABEL_SALVAR' | i18n}}</span>
         </button>
       </div>
 
       <div class="col-md-12 col-xs-12 text-right" *ngIf="acao.isAcaoVisualizar()">
         <button [routerLink]="['/grupo/listar']" type="button" class="btn btn-success" title="{{'LABEL_VOLTAR' | i18n}}">
-          <i class="fa fa-chevron-left" aria-hidden="true"></i> 
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>
           <span>{{'LABEL_VOLTAR' | i18n}}</span>
       </button>
       </div>
