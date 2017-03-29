@@ -1,0 +1,20 @@
+<div [@slideInOut]="" *ngFor="let item of items" class="confirm-message modal" role="dialog" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <h5 class="modal-header">{{'LABEL_CONFIRM_TITLE' | i18n}}</h5>
+      <div class="modal-body">{{item.msg}}</div>
+      <div class="modal-footer">
+        <div class="text-center" *ngIf="item.isConfirmTypeOk()">
+          <button type="button" class="btn btn-primary" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_OK' | i18n}}</button>
+        </div>
+
+        <div class="text-center" *ngIf="item.isConfirmTypeYesNo()">
+          <button type="button" class="btn btn-default" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_YES' | i18n}}</button>
+          <button type="button" class="btn btn-default" (click)="confirmNo(item)">{{'LABEL_CONFIRM_NO' | i18n}}</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+/* ------------- Message ------------- */
+
+.alert-message {
+	top: 100px;
+    left: 13%;
+    width: 75%;
+    z-index: 1050;
+    position: fixed;
+}
+
+.alert-message .alert {
+	width: 100%;
+}

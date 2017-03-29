@@ -1,0 +1,92 @@
+<div class="caixa-centro">
+  <div class="row">
+    <div class="col-md-12 col-xs-12">
+      <h2 *ngIf="acao.isAcaoIncluir()">{{'TITLE_PERFIL_INCLUIR' | i18n}}</h2>
+      <h2 *ngIf="acao.isAcaoAlterar()">{{'TITLE_PERFIL_ALTERAR' | i18n}}</h2>
+      <h2 *ngIf="acao.isAcaoVisualizar()">{{'TITLE_PERFIL_VISUALIZAR' | i18n}}</h2>
+    </div>
+  </div>
+
+  <form #formPerfil="ngForm" novalidate (ngSubmit)="salvar(perfil, formPerfil)">
+
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <label for="inputNome" class="required">{{'LABEL_NOME' | i18n}}:</label>
+        <input id="inputNome" type="text" class="form-control" title="{{'LABEL_NOME' | i18n}}" [(ngModel)]="perfil.nome" #perfilNome="ngModel"
+          name="nome" required maxlength="50" [disabled]="acao.isAcaoVisualizar()">
+        <validation-message [for]="perfilNome" [form]="formPerfil"></validation-message>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <label for="txtDescricao" class="required">{{'LABEL_DESCRICAO' | i18n}}:</label>
+        <textarea id="txtDescricao" class="form-control" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="perfil.descricao"
+          #perfilDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
+        <validation-message [for]="perfilDescricao" [form]="formPerfil"></validation-message>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="acao.isAcaoIncluir() || acao.isAcaoAlterar()">
+      <div class="col-md-12 col-xs-12">
+        <label for="inputFuncionalidade" class="required">{{'LABEL_FUNCIONALIDADE' | i18n}}:</label>
+        <div class="input-group">
+          <input type="text" id="inputFuncionalidade" list="listaFuncionalidade" class="form-control" data-live-search="true" title="{{'LABEL_FUNCIONALIDADE' | i18n}}"
+            [(ngModel)]="perfil.funcionalidade" #perfilFuncionalidade="ngModel" name="funcionalidade" required maxlength="50"
+            [disabled]="acao.isAcaoVisualizar()">
+          <datalist id="listaFuncionalidade">
+            <option *ngFor="let funcionalidade of funcionalidades" [value]="funcionalidade.nome">
+          </datalist>
+
+          <span class="input-group-btn">
+            <a class="btn btn-link btn-lg" (click)="addFuncionalidade()"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+          </span>
+        </div>
+
+        <validation-message [for]="perfilFuncionalidade" [form]="formPerfil"></validation-message>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-xs-12">
+        <table class="table table-striped table-bordered" *ngIf="perfilFuncionalidade">
+          <thead>
+            <tr>
+              <th>{{'LABEL_FUNCIONALIDADE' | i18n}}</th>
+              <th>{{'LABEL_ACAO' | i18n}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd" *ngFor="let listaFuncionalidade of perfilFuncionalidade">
+              <td class="col-md-3 col-xs-3 text-left">{{listaFuncionalidade.descricao}}</td>
+              <td class="col-md-5 col-xs-5 text-left">{{listaFuncionalidade.descricao}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 col-xs-12" *ngIf="acao.isAcaoIncluir() || acao.isAcaoAlterar()">
+        <button type="button" class="btn btn-danger pull-right" title="{{'LABEL_CANCELAR' | i18n}}" [routerLink]="['/perfil/listar']">
+            <i class="fa fa-ban" aria-hidden="true"></i>
+            <span>{{'LABEL_CANCELAR' | i18n}}</span>
+        </button>
+
+        <button type="submit" class="btn btn-success pull-right" title="{{'LABEL_SALVAR' | i18n}}">
+            <i class="fa fa-plus " aria-hidden="true"></i>
+            <span>{{'LABEL_SALVAR' | i18n}}</span>  
+        </button>
+      </div>
+
+      <div class="col-md-12 col-xs-12 text-right" *ngIf="acao.isAcaoVisualizar()">
+        <button [routerLink]="['/perfil/listar']" type="button" class="btn btn-success" title="{{'LABEL_VOLTAR' | i18n}}">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i> 
+          <span>{{'LABEL_VOLTAR' | i18n}}</span>
+      </button>
+      </div>
+    </div>
+
+  </form>
+
+</div>

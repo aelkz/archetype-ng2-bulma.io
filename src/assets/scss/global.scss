@@ -1,0 +1,37 @@
+/* -------------------- Formulário -------------------- */
+
+.row {
+    margin-bottom: 10px;
+}
+
+/* -------------  Button ------------------------------ */
+
+.btn-link  {
+    padding: 0;
+}
+
+.btn-link i {
+    font-size: 16px;
+}
+
+.btn-link span {
+    vertical-align: 1px;
+}
+
+table.table> tbody> tr> td button.btn {
+    padding: 3px 6px;
+}
+
+/* -------------------- Validation -------------------- */
+
+.required::after {
+	font-size: 12px;
+	content: ' *';
+	color: red;
+}
+
+/* -------------------- Texto -------------------- */
+
+.text-justify {
+  text-align: justify;
+}

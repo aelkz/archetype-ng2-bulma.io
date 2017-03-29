@@ -1,0 +1,92 @@
+<!-- Static Modal -->
+<div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center">
+                    <i class="fa fa-spinner fa-spin"></i>
+                    <h4>Carregando... <button type="button" class="close" style="float: none;" data-dismiss="modal" aria-hidden="true">×</button></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MENU LATERAL -->
+<div class="menu">
+    <ul class="lvl1">
+        <li class="">
+            <a href="#" [routerLink]="['/perfil']">
+                <span>{{'LABEL_PERFIL' | i18n}}</span>
+            </a>
+        </li>
+        <li class="">
+            <a href="#" [routerLink]="['/grupo']">
+                <span>{{'LABEL_GRUPO' | i18n}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-- FIM MENU LATERAL -->
+
+
+<div class="topo">
+    <!-- ITENS DO TOPO ALINHADOS A ESQUERDA -->
+    <div class="ferramentas-esquerda">
+        <div class="Mnu botao-menu"><i class="fa fa-bars"></i></div>
+        <div class="nome-sistema">
+            <h1><a href="" [routerLink]="['/']">{{'TITLE_SIGLA_SISTEMA' | i18n}}</a></h1>
+        </div>
+    </div>
+    <!-- ITENS DO TOPO ALINHADOS A DIREITA -->
+    <div class="ferramentas-direita">
+        <div class="caixa-topo dropdown">
+            <div class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                <div class="label-topo">Nome Usuario - 000.000.000-00 <i class="fa fa-caret-down"></i></div>
+                <div class="botao-topo"><i class="fa fa-user"></i></div>
+            </div>
+            <ul class="dropdown-menu" role="menu">
+                <li>Nome do Usuário Padrão</li>
+                <li>CPF: 000.000.000-00</li>
+                <li>Perfil: Administrador</li>
+                <li>Último acesso: 06/02/2015</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<!-- TOPO END -->
+
+<div class="espaco-topo"></div>
+
+<div class="conteudo container">
+    <router-outlet></router-outlet>
+</div>
+<!-- Final Container -->
+
+<footer>
+    <div class="marcas">SIGLA SISTEMA
+        <!-- <img src="http://dsv-static00.mec.gov.br/padraosistemas/bibliotecas/stable/mec/img/parceiro.jpg" alt=""> -->
+        <!-- exemplo -->
+    </div>
+    <div class="navegador"><i class="fa fa-flag"></i><br>Mantenha seu navegador atualizado.</div>
+
+    <div class="border-gradient">
+    </div>
+    <div id="rodapePadrao">
+        <div id="wrapper-rodape-padrao">
+            <div id="versao">
+                #01 00.0.01-001
+            </div>
+            <div class="rodape-info">
+                <span class="ministerio">&copy; Minist&eacute;rio da Educa&ccedil;&atilde;o.</span> Todos os direitos reservados
+                | Desenvolvimento: <abbr class="dti" title="Diretoria de Tecnologia da Informa&ccedil;&atilde;o - Minist&eacute;rio da Educa&ccedil;&atilde;o">DTI - MEC</abbr>
+            </div>
+            <div class="marca-brasil-flag">
+                <a href="http://www.brasil.gov.br" target="_blank" class="logo-brasil">
+                    <img src="http://static00.mec.gov.br/padraosistemas/bibliotecas/stable/mec/img/brasil.png" alt="Brasil - Governo Federal">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>

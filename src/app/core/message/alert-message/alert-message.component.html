@@ -1,0 +1,6 @@
+<div class="alert-message">
+    <div [@slideInOut]="" *ngFor="let item of items" class="alert {{item.type}}" role="alert">
+        <button type="button" class="close" aria-label="Close" (click)="removeMsg(item)"><span aria-hidden="true">×</span></button>
+        <span>{{item.msg}}</span>
+    </div>
+</div>
