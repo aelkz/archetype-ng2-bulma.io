@@ -8,7 +8,7 @@ import { MessageService, MessageItem } from '../message.service';
 @Component({
   selector: 'alert-message',
   templateUrl: 'alert-message.component.html',
-  styleUrls: ['alert-message.component.css'],
+  styleUrls: ['alert-message.component.scss'],
   animations: [
     trigger('slideInOut', [
       state('void', style({

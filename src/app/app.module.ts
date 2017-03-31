@@ -4,11 +4,11 @@ import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { ServiceModule } from './core/core.module';
-import { MessageModule } from './core/message/message.module';
-import { MessageResourceProvider } from './core/message/message.resource';
+import { MessageModule } from './shared/message/message.module';
+import { MessageResourceProvider } from './shared/message/message.resource';
 import { MessageResourceImpl } from './app.message';
-import { ValidationModule } from './core/validation/validation.module';
-import { ValidationResourceProvider } from './core/validation/validation.resource';
+import { ValidationModule } from './shared/validation/validation.module';
+import { ValidationResourceProvider } from './shared/validation/validation.resource';
 
 import { HomeModule } from './home/home.module';
 import { AcessoModule } from './core/acesso/acesso.module';

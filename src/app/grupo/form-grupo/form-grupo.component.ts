@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 
 import { AcaoSistema } from '../../app.acao';
 import { GrupoService } from '../grupo.service';
-import { MessageService } from '../../core/message/message.service';
+import { MessageService } from '../../shared/message/message.service';
 
 /**
  * Component responsável pela Inclusão, Alteração e Visualização de 'Grupo'.

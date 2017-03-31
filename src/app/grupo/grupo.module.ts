@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { MessageModule } from '../core/message/message.module';
-import { ValidationModule } from '../core/validation/validation.module';
+import { MessageModule } from '../shared/message/message.module';
+import { ValidationModule } from '../shared/validation/validation.module';
 import { FormGrupoComponent } from './form-grupo/form-grupo.component';
 import { ListGrupoComponent } from './list-grupo/list-grupo.component';
 

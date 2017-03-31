@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MessageModule } from '../message/message.module';
-import { ValidationModule } from '../validation/validation.module';
+import { ValidationModule } from '../shared/validation/validation.module';
 import { ListPerfilComponent } from './list-perfil/list-perfil.component';
 import { FormPerfilComponent } from './form-perfil/form-perfil.component';
 

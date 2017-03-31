@@ -9,7 +9,7 @@ import { ValidationResourceProvider, ValidationResource } from '../validation.re
 @Component({
   selector: 'validation-message',
   template: '<span *ngIf="for.touched || form.submitted"><p class="validation-invalid" *ngFor="let error of errors()" >{{error}}</p></span>',
-  styleUrls: ['validation-message.component.css']
+  styleUrls: ['validation-message.component.scss']
 })
 export class ValidationMessageComponent {
 

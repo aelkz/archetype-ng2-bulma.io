@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GrupoService } from '../grupo.service';
-import { MessageService } from '../../core/message/message.service';
+import { MessageService } from '../../shared/message/message.service';
 
 /**
  * Component responsável pela Listagem de 'Grupo'.

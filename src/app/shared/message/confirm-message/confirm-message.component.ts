@@ -8,7 +8,7 @@ import { MessageService, MessageItem } from '../message.service';
 @Component({
   selector: 'confirm-message',
   templateUrl: 'confirm-message.component.html',
-  styleUrls: ['confirm-message.component.css'],
+  styleUrls: ['confirm-message.component.scss'],
   animations: [
     trigger('slideInOut', [
       state('void', style({

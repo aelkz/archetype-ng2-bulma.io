@@ -1,6 +1,6 @@
 
-import { MessageResource } from './core/message/message.resource';
-import { ValidationResource } from './core/validation/validation.resource';
+import { MessageResource } from './shared/message/message.resource';
+import { ValidationResource } from './shared/validation/validation.resource';
 
 /**
  * Implementação de provider responsável por prover as 'descrições' e 'mensagens' utilizadas na aplicação em um unico local.
