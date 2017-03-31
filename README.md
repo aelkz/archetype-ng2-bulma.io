@@ -14,31 +14,31 @@ corporativo.arquetipo-angular2
 1.0.0
 ```
 
-###<i class="icon-cog"></i>CONFIGURAÇÃO E INSTALAÇÃO
+### <i class="icon-cog"></i>CONFIGURAÇÃO E INSTALAÇÃO
 
-####<i class="icon-beaker"></i>1.INSTALAÇÃO DE MÓDULOS NPM
+#### <i class="icon-beaker"></i>1.INSTALAÇÃO DE MÓDULOS NPM
 ```
 $ npm install
 $ ng serve
 ```
 > **Importante:** As configurações do projeto não deverão ser modificadas (arquivos .conf / *config *.json) e as bibliotecas [@angular]() não deverão ser atualizadas para a versão 4.x (visualizar item 'Restrições de atualização de pacotes NPM' no documento de arquitetura de referência Angular).
 
-####<i class="icon-beaker"></i>2.ANGULAR-CLI QUICKSTART
+#### <i class="icon-beaker"></i>2.ANGULAR-CLI QUICKSTART
 ```
 $ xxx
 ```
 
-####<i class="icon-beaker"></i>3.EXECUTAR TESTES UNITÁRIOS
+#### <i class="icon-beaker"></i>3.EXECUTAR TESTES UNITÁRIOS
 ```
 $ ng test
 ```
 
-####<i class="icon-beaker"></i>4.EXECUTAR TESTES END-TO-END
+#### <i class="icon-beaker"></i>4.EXECUTAR TESTES END-TO-END
 ```
 $ ng e2e
 ```
 
-####<i class="icon-beaker"></i>5.BUILD
+#### <i class="icon-beaker"></i>5.BUILD
 `ng build` para ambiente de desenvolvimento, ou `ng build -prod` para ambiente de produção. Os artefatos serão construídos no diretório `/dist`.
 
 ### EQUIPE ATUAL
