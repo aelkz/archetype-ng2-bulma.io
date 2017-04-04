@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PerfilService } from '../perfil.service';
-import { MessageService } from '../../message/message.service';
+import { MessageService } from '../../shared/message/message.service';
 /**
  * Component responsável pela 'Listagem' de 'Perfil'.
  */

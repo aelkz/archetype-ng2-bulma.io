@@ -181,3 +181,7 @@ $RECYCLE.BIN/
 ## MacOS detritus
 #####################
 .DS_Store
+.eslintrc.json
+spec/
+src/assets/images/
+src/assets/img/
