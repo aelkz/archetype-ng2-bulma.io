@@ -10,7 +10,7 @@ import { MessageResourceImpl } from './app.message';
 import { ValidationModule } from './shared/validation/validation.module';
 import { ValidationResourceProvider } from './shared/validation/validation.resource';
 
-import { HomeModule } from './home/home.module';
+import { HomeModule } from './components/home/home.module';
 import { AcessoModule } from './core/acesso/acesso.module';
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.router';

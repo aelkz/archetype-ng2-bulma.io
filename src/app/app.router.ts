@@ -1,7 +1,7 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeRoutes } from './home/home.router';
+import { HomeRoutes } from './components/home/home.router';
 import { AcessoRoutes } from './core/acesso/acesso.router';
 
 /**

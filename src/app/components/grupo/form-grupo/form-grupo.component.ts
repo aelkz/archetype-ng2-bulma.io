@@ -11,7 +11,7 @@ import { MessageService } from '../../shared/message/message.service';
  */
 @Component({
   selector: 'app-form-grupo',
-  templateUrl: './form-grupo.component.html'
+  templateUrl: 'form-grupo.component.html'
 })
 export class FormGrupoComponent {
 

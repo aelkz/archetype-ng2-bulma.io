@@ -1,37 +1,37 @@
-/* -------------------- Formulário -------------------- */
+// main.scss
+/* inject:imports */
+/* endinject */
 
+/* -------------------- Formulário -------------------- */
 .row {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 /* -------------  Button ------------------------------ */
-
 .btn-link  {
-    padding: 0;
+  padding: 0;
 }
 
 .btn-link i {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .btn-link span {
-    vertical-align: 1px;
+  vertical-align: 1px;
 }
 
 table.table> tbody> tr> td button.btn {
-    padding: 3px 6px;
+  padding: 3px 6px;
 }
 
 /* -------------------- Validation -------------------- */
-
 .required::after {
-	font-size: 12px;
-	content: ' *';
-	color: red;
+  font-size: 12px;
+  content: ' *';
+  color: red;
 }
 
 /* -------------------- Texto -------------------- */
-
 .text-justify {
   text-align: justify;
 }

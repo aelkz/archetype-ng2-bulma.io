@@ -8,7 +8,7 @@ import { MessageService } from '../../shared/message/message.service';
  */
 @Component({
   selector: 'app-list-grupo',
-  templateUrl: './list-grupo.component.html'
+  templateUrl: 'list-grupo.component.html'
 })
 export class ListGrupoComponent implements OnInit {
 
