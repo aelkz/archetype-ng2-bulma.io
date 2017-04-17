@@ -14,7 +14,7 @@
     "clean:core": "rimraf lib",
     "clean:test": "rimraf dist",
     "compile": "npm-run-all -p compile:core compile:test -s",
-    "compile:core": "tsc -p src",
+    "compile:core": "tsc -p .",
     "compile:test": "tsc -p e2e",
     "lint": "npm-run-all -p lint:global",
     "lint:global": "tslint --project tsconfig.json --format stylish # test includes 'src' too",

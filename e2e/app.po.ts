@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class SiscebasViewPage {
+export class ProjetoViewPage {
   navigateTo() {
     return browser.get('/');
   }

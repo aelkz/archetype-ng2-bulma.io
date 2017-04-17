@@ -1,14 +1,17 @@
-import { SiscebasViewPage } from './app.po';
+import { ProjetoViewPage } from './app.po';
+import {promise} from 'selenium-webdriver';
+import Promise = promise.Promise;
+import Expected = jasmine.Expected;
 
-describe('siscebas-view App', () => {
-  let page: SiscebasViewPage;
+describe('projeto-view App', () => {
+  let page: ProjetoViewPage;
 
   beforeEach(() => {
-    page = new SiscebasViewPage();
+    page = new ProjetoViewPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should be called', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect<any>(page.getParagraphText()).toHaveBeenCalled();
   });
 });
