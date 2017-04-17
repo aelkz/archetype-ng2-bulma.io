@@ -18,39 +18,43 @@ export class PerfilService {
   constructor() {
     this.perfils = [
       {
-        "id": 1,
-        "nome": "Perfil 1",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.",
-        "situacao": {
-          "id": 1,
-          "descricao": "Ativo"
+        'id': 1,
+        'nome': 'Perfil 1',
+        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
+                     ' eleifend enim, in fringilla felis dui non dolor.',
+        'situacao': {
+          'id': 1,
+          'descricao': 'Ativo'
         }
       },
       {
-        "id": 2,
-        "nome": "Perfil 2",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.",
-        "situacao": {
-          "id": 2,
-          "descricao": "Inativo"
+        'id': 2,
+        'nome': 'Perfil 2',
+        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
+                     ' eleifend enim, in fringilla felis dui non dolor.',
+        'situacao': {
+          'id': 2,
+          'descricao': 'Inativo'
         }
       },
       {
-        "id": 3,
-        "nome": "Perfil 3",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.",
-        "situacao": {
-          "id": 1,
-          "descricao": "Ativo"
+        'id': 3,
+        'nome': 'Perfil 3',
+        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
+                     'eleifend enim, in fringilla felis dui non dolor.',
+        'situacao': {
+          'id': 1,
+          'descricao': 'Ativo'
         }
       },
       {
-        "id": 4,
-        "nome": "Perfil 4",
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.",
-        "situacao": {
-          "id": 2,
-          "descricao": "Inativo"
+        'id': 4,
+        'nome': 'Perfil 4',
+        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
+                     'eleifend enim, in fringilla felis dui non dolor.',
+        'situacao': {
+          'id': 2,
+          'descricao': 'Inativo'
         }
       }
     ];
@@ -59,31 +63,34 @@ export class PerfilService {
  */
     this.funcionalidades = [
       {
-        "id": 1,
-        "nome": "Funcionalidade 1",
-        "acao": {
-          "id": 2,
-          "descricao":"ALterar",
+        'id': 1,
+        'nome': 'Funcionalidade 1',
+        'acao': {
+          'id': 2,
+          'descricao': 'Alterar',
         },
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.",
+        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
+                     'eleifend enim, in fringilla felis dui non dolor.',
       },
       {
-        "id": 2,
-        "nome": "Funcionalidade 2",
-        "acao": {
-          "id": 1,
-          "descricao":"Consultar",
+        'id': 2,
+        'nome': 'Funcionalidade 2',
+        'acao': {
+          'id': 1,
+          'descricao': 'Consultar',
         },
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.",
+        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
+                     'eleifend enim, in fringilla felis dui non dolor.',
       },
       {
-        "id": 3,
-        "nome": "Funcionalidade 3",
-        "acao": {
-          "id": 3,
-          "descricao":"Excluir",
+        'id': 3,
+        'nome': 'Funcionalidade 3',
+        'acao': {
+          'id': 3,
+          'descricao': 'Excluir',
         },
-        "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.",
+        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
+                     'eleifend enim, in fringilla felis dui non dolor.',
       },
     ];
   }
@@ -94,8 +101,8 @@ export class PerfilService {
    */
   public salvar(perfil: any) {
     perfil.id = Math.floor(Math.random() * 100) + 5;
-    perfil.descricao = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.";
-    perfil.situacao = { "id": 1, "descricao": "Ativo" };
+    perfil.descricao = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.';
+    perfil.situacao = { 'id': 1, 'descricao': 'Ativo' };
 
     this.perfils.push(perfil);
   }
@@ -113,7 +120,7 @@ export class PerfilService {
    * Retorna a instância de 'Perfil'.
    */
   public getPerfil(id: any): any {
-    return this.perfils.filter(perfil => perfil.id == id)[0];
+    return this.perfils.filter(perfil => perfil.id === id)[0];
   }
  /**
    * Retorna o array de funcionalidades

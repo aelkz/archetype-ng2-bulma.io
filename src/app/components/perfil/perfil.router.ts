@@ -10,17 +10,17 @@ export const PerfilRoutes: Routes = [
     {
         path: 'perfil/incluir',
         component: FormPerfilComponent,
-        data: [{ "acao": "incluir" }]
+        data: [{ 'acao': 'incluir' }]
     },
     {
         path: 'perfil/:id/alterar',
         component: FormPerfilComponent,
-        data: [{ "acao": "alterar" }]
+        data: [{ 'acao': 'alterar' }]
     },
     {
         path: 'perfil/:id/visualizar',
         component: FormPerfilComponent,
-        data: [{ "acao": "visualizar" }]
+        data: [{ 'acao': 'visualizar' }]
     },
     {
         path: 'perfil/listar',

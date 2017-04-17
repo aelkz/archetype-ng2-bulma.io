@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PerfilService } from '../perfil.service';
-import { MessageService } from '../../shared/message/message.service';
+import { MessageService } from '../../../shared/message/message.service';
 /**
  * Component responsável pela 'Listagem' de 'Perfil'.
  */
@@ -9,7 +9,7 @@ import { MessageService } from '../../shared/message/message.service';
   selector: 'app-list-perfil',
   templateUrl: 'list-perfil.component.html'
 })
-export class ListPerfilComponent {
+export class ListPerfilComponent implements OnInit {
 
   private messageService: MessageService;
   private perfilService: PerfilService;
@@ -58,7 +58,7 @@ export class ListPerfilComponent {
    * @param perfil
    */
   public ativar(perfil: any): void {
-    let self = this;
+    const self = this;
 
     this.messageService.addConfirmYesNo('MSG_PERFIL_CONFIRM_ATIVACAO', function () {
       perfil.situacao.id = 1;
@@ -74,7 +74,7 @@ export class ListPerfilComponent {
    * @param perfil
    */
   public inativar(perfil: any): void {
-    let self = this;
+    const self = this;
 
     this.messageService.addConfirmYesNo('MSG_PERFIL_CONFIRM_INATIVACAO', function () {
       perfil.situacao.id = 2;

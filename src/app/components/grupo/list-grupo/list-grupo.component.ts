@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GrupoService } from '../grupo.service';
-import { MessageService } from '../../shared/message/message.service';
+import { MessageService } from '../../../shared/message/message.service';
 
 /**
  * Component responsável pela Listagem de 'Grupo'.
@@ -59,7 +59,7 @@ export class ListGrupoComponent implements OnInit {
    * @param grupo
    */
   public ativar(grupo: any): void {
-    let self = this;
+    const self = this;
 
     this.messageService.addConfirmYesNo('MSG_GRUPO_CONFIRM_ATIVACAO', function () {
       grupo.situacao.id = 1;
@@ -75,7 +75,7 @@ export class ListGrupoComponent implements OnInit {
    * @param grupo
    */
   public inativar(grupo: any): void {
-    let self = this;
+    const self = this;
 
     this.messageService.addConfirmYesNo('MSG_GRUPO_CONFIRM_INATIVACAO', function () {
       grupo.situacao.id = 2;
@@ -86,7 +86,7 @@ export class ListGrupoComponent implements OnInit {
   }
 
   public inativar2(grupo: any): void {
-    let self = this;
+    const self = this;
 
     grupo.situacao.id = 2;
     grupo.situacao.descricao = 'Inativo';

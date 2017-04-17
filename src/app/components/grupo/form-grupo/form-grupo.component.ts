@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 
-import { AcaoSistema } from '../../app.acao';
+import { AcaoSistema } from '../../../app.acao';
 import { GrupoService } from '../grupo.service';
-import { MessageService } from '../../shared/message/message.service';
+import { MessageService } from '../../../shared/message/message.service';
 
 /**
  * Component responsável pela Inclusão, Alteração e Visualização de 'Grupo'.
@@ -38,7 +38,7 @@ export class FormGrupoComponent {
 
     console.log(this.acao);
 
-    let id = route.snapshot.params['id'];
+    const id = route.snapshot.params['id'];
     this.inicializarGrupo(id);
   }
 
@@ -62,7 +62,7 @@ export class FormGrupoComponent {
   public salvar(grupo: any, form: FormControl): void {
 
     if (form.valid) {
-      let msg = grupo.id === undefined ? 'MSG_GRUPO_INCLUSAO' : 'MSG_GRUPO_ALTERACAO';
+      const msg = grupo.id === undefined ? 'MSG_GRUPO_INCLUSAO' : 'MSG_GRUPO_ALTERACAO';
 
       this.grupoService.salvar(grupo);
       this.router.navigate(['/grupo/listar']);

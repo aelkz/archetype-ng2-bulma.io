@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home.component';
-import { GrupoRoutes } from '../components/grupo/grupo.router';
+import { GrupoRoutes } from '../../components/grupo/grupo.router';
 import { PerfilRoutes } from '../perfil/perfil.router';
 
 /**
