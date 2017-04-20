@@ -6,7 +6,7 @@ import { MessageService, MessageItem } from '../message.service';
  * Implementação de componente responsável por gerar a estrutura 'html' onde os alertas serão gerados.
  */
 @Component({
-  selector: 'alert-message',
+  selector: 'app-alert-message',
   templateUrl: 'alert-message.component.html',
   styleUrls: ['alert-message.component.scss'],
   animations: [
@@ -46,7 +46,7 @@ export class AlertMessageComponent {
    * @param messageItem
    */
   private addMsgItem(messageItem: MessageItem): void {
-    let count = this.items.filter(item => item.getMsg() === messageItem.getMsg()).length;
+    const count = this.items.filter(item => item.getMsg() === messageItem.getMsg()).length;
 
     if (count === 0) {
       this.items.push(messageItem);
