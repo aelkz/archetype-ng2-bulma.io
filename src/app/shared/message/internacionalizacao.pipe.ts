@@ -34,7 +34,7 @@ export class InternacionalizacaoPipe implements PipeTransform {
       if (typeof params === 'string') {
         description = description.replace(new RegExp('\\{0}', 'g'), params);
       } else {
-        for (var index = 0; index < params.length; index++) {
+        for (let index = 0; index < params.length; index++) {
           description = description.replace(new RegExp('\\{' + index + '\\}', 'g'), params[index]);
         }
       }

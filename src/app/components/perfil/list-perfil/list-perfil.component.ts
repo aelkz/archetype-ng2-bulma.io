@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { PerfilService } from '../perfil.service';
-import { MessageService } from '../../../shared/message/message.service';
+import {MessageService, ConfirmListener} from '../../../shared/message/message.service';
 /**
  * Component responsável pela 'Listagem' de 'Perfil'.
  */
@@ -60,11 +60,12 @@ export class ListPerfilComponent implements OnInit {
   public ativar(perfil: any): void {
     const self = this;
 
-    this.messageService.addConfirmYesNo('MSG_PERFIL_CONFIRM_ATIVACAO', function () {
+    this.messageService.addConfirmYesNo('MSG_PERFIL_CONFIRM_ATIVACAO', (): ConfirmListener => {
       perfil.situacao.id = 1;
       perfil.situacao.descricao = 'Ativo';
       self.ngOnInit();
       self.messageService.addMsgInf('Perfil ativado com sucesso!');
+      return;
     });
   }
 
@@ -76,11 +77,12 @@ export class ListPerfilComponent implements OnInit {
   public inativar(perfil: any): void {
     const self = this;
 
-    this.messageService.addConfirmYesNo('MSG_PERFIL_CONFIRM_INATIVACAO', function () {
+    this.messageService.addConfirmYesNo('MSG_PERFIL_CONFIRM_INATIVACAO', (): ConfirmListener => {
       perfil.situacao.id = 2;
       perfil.situacao.descricao = 'Inativo';
       self.ngOnInit();
       self.messageService.addMsgInf('Perfil inativado com sucesso!');
+      return;
     });
   }
 

@@ -27,6 +27,6 @@ export class MessageModule {
         MessageService,
         InternacionalizacaoPipe
       ]
-    }
+    };
   }
 }

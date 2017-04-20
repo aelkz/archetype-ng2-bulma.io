@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GrupoService } from '../grupo.service';
-import { MessageService } from '../../../shared/message/message.service';
+import {MessageService, ConfirmListener} from '../../../shared/message/message.service';
 
 /**
  * Component responsável pela Listagem de 'Grupo'.
@@ -61,11 +61,12 @@ export class ListGrupoComponent implements OnInit {
   public ativar(grupo: any): void {
     const self = this;
 
-    this.messageService.addConfirmYesNo('MSG_GRUPO_CONFIRM_ATIVACAO', function () {
+    this.messageService.addConfirmYesNo('MSG_GRUPO_CONFIRM_ATIVACAO', (): ConfirmListener => {
       grupo.situacao.id = 1;
       grupo.situacao.descricao = 'Ativo';
       self.ngOnInit();
       self.messageService.addMsgInf('Grupo ativado com sucesso!');
+      return;
     });
   }
 
@@ -77,11 +78,12 @@ export class ListGrupoComponent implements OnInit {
   public inativar(grupo: any): void {
     const self = this;
 
-    this.messageService.addConfirmYesNo('MSG_GRUPO_CONFIRM_INATIVACAO', function () {
+    this.messageService.addConfirmYesNo('MSG_GRUPO_CONFIRM_INATIVACAO', (): ConfirmListener => {
       grupo.situacao.id = 2;
       grupo.situacao.descricao = 'Inativo';
       self.ngOnInit();
       self.messageService.addMsgInf('Grupo inativado com sucesso!');
+      return;
     });
   }
 

@@ -16,8 +16,8 @@ export class MessageItem {
 
     private msg: string;
     private type: string;
-    private listenerNo: ConfirmListener;
-    private listenerYesOk: ConfirmListener;
+    private listenerNo: (() => ConfirmListener);
+    private listenerYesOk: (() => ConfirmListener);
 
     /**
      * Construtor da classe.
@@ -27,7 +27,7 @@ export class MessageItem {
      * @param listenerYesOk
      * @param listenerNo
      */
-    constructor(msg: string, type: string, listenerYesOk?: ConfirmListener, listenerNo?: ConfirmListener) {
+    constructor(msg: string, type: string, listenerYesOk?: (() => ConfirmListener), listenerNo?: (() => ConfirmListener)) {
         this.msg = msg;
         this.type = type;
         this.listenerNo = listenerNo;
@@ -89,7 +89,7 @@ export class MessageItem {
  * Interface 'Listener' que determina o contrato da função callback referente ao 'confirm'.
  */
 export interface ConfirmListener {
-    (): void;
+  method: () => void;
 }
 
 /**
@@ -135,8 +135,8 @@ export class MessageService {
      * @param type
      * @param params
      */
-    private addConfirm(msg: string, type: string, params: any, listenerYesOk: ConfirmListener, listenerNo?: ConfirmListener): void {
-        let description = this.getDescription(msg, params);
+    private addConfirm(msg: string, type: string, params: any, listenerYesOk: (() => ConfirmListener), listenerNo?: (() => ConfirmListener)): void {
+        const description = this.getDescription(msg, params);
 
         if (description !== null) {
             this.confirmEmitter.emit(new MessageItem(description, type, listenerYesOk, listenerNo));
@@ -151,7 +151,7 @@ export class MessageService {
      * @param params
      */
     private addMsg(msg: string, type: string, params?: any): void {
-        let description = this.getDescription(msg, params);
+        const description = this.getDescription(msg, params);
 
         if (description !== null) {
             this.msgEmitter.emit(new MessageItem(description, type));
@@ -165,7 +165,7 @@ export class MessageService {
      * @param listenerOk
      * @param params
      */
-    public addConfirmOk(msg: string, listenerOk?: ConfirmListener, params?: any): void {
+    public addConfirmOk(msg: string, listenerOk?: (() => ConfirmListener), params?: any): void {
         this.addConfirm(msg, MessageItem.CONFIRM_TYPE_OK, params, listenerOk);
     }
 
@@ -177,7 +177,7 @@ export class MessageService {
      * @param listenerNo
      * @param params
      */
-    public addConfirmYesNo(msg: string, listenerYes?: ConfirmListener, listenerNo?: ConfirmListener, params?: any): void {
+    public addConfirmYesNo(msg: string, listenerYes?: (() => ConfirmListener), listenerNo?: (() => ConfirmListener), params?: any): void {
         this.addConfirm(msg, MessageItem.CONFIRM_TYPE_YES_NO, params, listenerYes, listenerNo);
     }
 
