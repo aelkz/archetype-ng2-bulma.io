@@ -1,4 +1,4 @@
 export const environment = {
-	production: true,
-	homologation: false
-}
+  production: true,
+  homologation: false
+};

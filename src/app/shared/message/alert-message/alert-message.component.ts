@@ -6,7 +6,7 @@ import { MessageService, MessageItem } from '../message.service';
  * Implementação de componente responsável por gerar a estrutura 'html' onde os alertas serão gerados.
  */
 @Component({
-  selector: 'app-alert-message',
+  selector: 'alert-message',
   templateUrl: 'alert-message.component.html',
   styleUrls: ['alert-message.component.scss'],
   animations: [

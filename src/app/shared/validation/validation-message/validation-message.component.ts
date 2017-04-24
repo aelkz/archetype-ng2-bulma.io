@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ValidationResourceProvider, ValidationResource } from '../validation.resource'
+import { ValidationResourceProvider, ValidationResource } from '../validation.resource';
 
 /**
  * Component responsável por prover o recurso de visualização de mensagem de validação,
@@ -31,10 +31,10 @@ export class ValidationMessageComponent {
    * Retorna a mensagem conforme o erro detectado.
    */
   public errors(): string[] {
-    let errors = [];
+    const errors = [];
 
     if (this.for.errors !== null) {
-      for (let error of Object.keys(this.for.errors)) {
+      for (const error of Object.keys(this.for.errors)) {
         if (this.for.hasError(error)) {
           let message = this.validationResource.getMessage(error);
 

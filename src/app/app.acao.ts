@@ -6,10 +6,10 @@ import { ActivatedRoute } from '@angular/router';
  */
 export class AcaoSistema {
 
-  private static ACAO_LISTAR: string = 'listar';
-  private static ACAO_INCLUIR: string = 'incluir';
-  private static ACAO_ALTERAR: string = 'alterar';
-  private static ACAO_VISUALIZAR: string = 'visualizar'
+  private static ACAO_LISTAR = 'listar';
+  private static ACAO_INCLUIR = 'incluir';
+  private static ACAO_ALTERAR = 'alterar';
+  private static ACAO_VISUALIZAR = 'visualizar';
 
   private acaoVigente: string;
 
@@ -21,10 +21,10 @@ export class AcaoSistema {
   constructor(route: ActivatedRoute) {
 
     if (route !== null && route !== undefined) {
-      let data = route.snapshot.data;
+      const data = route.snapshot.data;
 
-      for (let index of Object.keys(data)) {
-        let param = data[index];
+      for (const index of Object.keys(data)) {
+        const param = data[index];
 
         if (param !== null && typeof param === 'object' && param['acao'] !== undefined) {
           this.acaoVigente = param['acao'];

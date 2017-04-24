@@ -43,8 +43,8 @@ export class ConfirmMessageComponent {
    *
    * @param messageItem
    */
-  private addConfirmItem(messageItem: MessageItem) : void {
-    let count = this.items.filter(item => item.getMsg() === messageItem.getMsg()).length;
+  private addConfirmItem(messageItem: MessageItem): void {
+    const count = this.items.filter(item => item.getMsg() === messageItem.getMsg()).length;
 
     if (count === 0) {
       this.items.push(messageItem);
@@ -56,7 +56,7 @@ export class ConfirmMessageComponent {
    *
    * @param messageItem
    */
-  private removeConfirm(messageItem: MessageItem) : void {
+  private removeConfirm(messageItem: MessageItem): void {
     this.items = this.items.filter(item => item.getMsg() !== messageItem.getMsg());
   }
 
@@ -65,7 +65,7 @@ export class ConfirmMessageComponent {
    *
    * @param messageItem
    */
-  public confirmYesOk(messageItem: MessageItem) : void {
+  public confirmYesOk(messageItem: MessageItem): void {
     messageItem.executYesOk();
     this.removeConfirm(messageItem);
   }
@@ -75,7 +75,7 @@ export class ConfirmMessageComponent {
    *
    * @param messageItem
    */
-  public confirmNo(messageItem: MessageItem) : void {
+  public confirmNo(messageItem: MessageItem): void {
     messageItem.executNo();
     this.removeConfirm(messageItem);
   }
