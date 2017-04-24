@@ -13,7 +13,7 @@ corporativo.arquetipo-angular2
 1.0.0
 ```
 
-### <i class="icon-cog"></i>CONFIGURAÇÃO E INSTALAÇÃO XXXXXXXXXXXXXXX
+### <i class="icon-cog"></i>CONFIGURAÇÃO E INSTALAÇÃO
 
 #### <i class="icon-beaker"></i>1.INSTALAÇÃO DE MÓDULOS NPM
 ```
