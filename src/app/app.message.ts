@@ -1,4 +1,3 @@
-
 import { MessageResource } from './shared/message/message.resource';
 import { ValidationResource } from './shared/validation/validation.resource';
 
@@ -25,6 +24,7 @@ export class MessageResourceImpl implements MessageResource, ValidationResource 
           'LABEL_ACAO': 'Ações',
           'LABEL_GRUPO': 'Grupo',
           'LABEL_PERFIL': 'Perfil',
+
           'LABEL_SITUACAO': 'Situação',
           'LABEL_DESCRICAO': 'Descrição',
           'LABEL_VISUALIZAR': 'Visualizar',
@@ -49,15 +49,14 @@ export class MessageResourceImpl implements MessageResource, ValidationResource 
           'TITLE_PERFIL_ALTERAR': 'ALTERAR PERFIL',
           'TITLE_PERFIL_VISUALIZAR': 'VISUALIZAR PERFIL',
 
-          'MSG_GRUPO_INCLUSAO': 'Grupo incluído com sucesso!',
-          'MSG_GRUPO_ALTERACAO': 'Grupo alterado com sucesso!',
-          'MSG_GRUPO_CONFIRM_ATIVACAO': 'Deseja realmente ativar o grupo selecionado?',
-          'MSG_GRUPO_CONFIRM_INATIVACAO': 'Deseja realmente inativar o grupo selecionado?',
+          'MSG_CONFIRM_ATIVACAO': 'Deseja realmente ativar o registro selecionado?',
+          'MSG_CONFIRM_INATIVACAO': 'Deseja realmente inativar o registro selecionado?',
 
-          'MSG_PERFIL_INCLUSAO': 'Perfil incluído com sucesso!',
-          'MSG_PERFIL_ALTERACAO': 'Perfil alterado com sucesso!',
-          'MSG_PERFIL_CONFIRM_ATIVACAO': 'Deseja realmente ativar o perfil selecionado?',
-          'MSG_PERFIL_CONFIRM_INATIVACAO': 'Deseja realmente inativar o perfil selecionado?'
+          'MSG_ATIVACAO': '{0} ativado com sucesso!',
+          'MSG_INATIVACAO': '{0} inativado com sucesso!',
+
+          'MSG_INCLUSAO': '{0} incluído com sucesso!',
+          'MSG_ALTERACAO': '{0} alterado com sucesso!',
         };
     }
 

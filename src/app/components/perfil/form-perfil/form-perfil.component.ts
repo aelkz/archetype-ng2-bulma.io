@@ -1,10 +1,20 @@
+// /-------------------------------------------------\
+// | Componentes angular                             |
+// \-------------------------------------------------/
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 
+// /-------------------------------------------------\
+// | Componentes compartilhados do projeto           |
+// \-------------------------------------------------/
 import { AcaoSistema } from '../../../app.acao';
-import { PerfilService } from '../perfil.service';
 import { MessageService } from '../../../shared/message/message.service';
+
+// /-------------------------------------------------\
+// | Componentes do módulo/projeto                   |
+// \-------------------------------------------------/
+import { PerfilService } from '../perfil.service';
 
 /**
  * Component responsável pela Inclusão e Alteração de 'Perfil'.
@@ -15,7 +25,7 @@ import { MessageService } from '../../../shared/message/message.service';
 })
 export class FormPerfilComponent {
 
-private messageService: MessageService;
+  private messageService: MessageService;
   private perfilService: PerfilService;
   private router: Router;
 
@@ -24,7 +34,6 @@ private messageService: MessageService;
 
   /** array da lista de funcionalidades **/
   public funcionalidades: any = {};
-
 
   /**
    * Construtor da classe.
@@ -77,6 +86,7 @@ private messageService: MessageService;
       this.messageService.addMsgInf(msg);
     }
   }
+
   /**
    * Adiciona a funcionalidade escolhida a gride do formulario perfil
    */

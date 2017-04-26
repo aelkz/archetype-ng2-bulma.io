@@ -1,7 +1,18 @@
+// /-------------------------------------------------\
+// | Componentes angular                             |
+// \-------------------------------------------------/
 import { Component, OnInit } from '@angular/core';
 
+// /-------------------------------------------------\
+// | Componentes compartilhados do projeto           |
+// \-------------------------------------------------/
+import { MessageService, ConfirmListener } from '../../../shared/message/message.service';
+import { MessageResource, MessageResourceProvider } from './../../../shared/message/message.resource';
+
+// /-------------------------------------------------\
+// | Componentes do módulo/projeto                   |
+// \-------------------------------------------------/
 import { PerfilService } from '../perfil.service';
-import {MessageService, ConfirmListener} from '../../../shared/message/message.service';
 /**
  * Component responsável pela 'Listagem' de 'Perfil'.
  */
@@ -10,9 +21,10 @@ import {MessageService, ConfirmListener} from '../../../shared/message/message.s
   templateUrl: 'list-perfil.component.html'
 })
 export class ListPerfilComponent implements OnInit {
-
   private messageService: MessageService;
   private perfilService: PerfilService;
+
+  private messageResource: MessageResource;
 
   public perfils: any[];
 
@@ -22,9 +34,10 @@ export class ListPerfilComponent implements OnInit {
    * @param perfilService
    * @param messageService
    */
-  constructor(perfilService: PerfilService, messageService: MessageService) {
+  constructor(perfilService: PerfilService, messageService: MessageService, MessageResource: MessageResourceProvider) {
     this.perfilService = perfilService;
     this.messageService = messageService;
+    this.messageResource = new MessageResource();
   }
 
   /**
@@ -60,11 +73,11 @@ export class ListPerfilComponent implements OnInit {
   public ativar(perfil: any): void {
     const self = this;
 
-    this.messageService.addConfirmYesNo('MSG_PERFIL_CONFIRM_ATIVACAO', (): ConfirmListener => {
+    this.messageService.addConfirmYesNo('MSG_CONFIRM_ATIVACAO', (): ConfirmListener => {
       perfil.situacao.id = 1;
       perfil.situacao.descricao = 'Ativo';
       self.ngOnInit();
-      self.messageService.addMsgInf('Perfil ativado com sucesso!');
+      self.messageService.addMsgInf(this.messageResource.getDescription('MSG_ATIVACAO'), this.messageResource.getDescription('LABEL_PERFIL'));
       return;
     });
   }
@@ -81,7 +94,7 @@ export class ListPerfilComponent implements OnInit {
       perfil.situacao.id = 2;
       perfil.situacao.descricao = 'Inativo';
       self.ngOnInit();
-      self.messageService.addMsgInf('Perfil inativado com sucesso!');
+      self.messageService.addMsgInf(this.messageResource.getDescription('MSG_INATIVACAO'), this.messageResource.getDescription('LABEL_PERFIL'));
       return;
     });
   }

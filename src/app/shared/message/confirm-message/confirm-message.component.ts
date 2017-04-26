@@ -71,7 +71,7 @@ export class ConfirmMessageComponent {
   }
 
   /**
-   * Executa o callbacl para a ação 'NO'.
+   * Executa o callback para a ação 'NO'.
    *
    * @param messageItem
    */

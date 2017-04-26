@@ -30,7 +30,6 @@ export class InternacionalizacaoPipe implements PipeTransform {
     let description = this.messageResource.getDescription(chave);
 
     if (description !== undefined && params !== undefined) {
-
       if (typeof params === 'string') {
         description = description.replace(new RegExp('\\{0}', 'g'), params);
       } else {

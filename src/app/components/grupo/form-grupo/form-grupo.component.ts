@@ -1,22 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+// /-------------------------------------------------\
+// | Componentes angular                             |
+// \-------------------------------------------------/
+import {Component, OnInit, Input} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 
+// /-------------------------------------------------\
+// | Componentes compartilhados do projeto           |
+// \-------------------------------------------------/
+import { MessageService } from '../../../shared/message/message.service';
+import { MessageResource, MessageResourceProvider } from './../../../shared/message/message.resource';
+
+// /-------------------------------------------------\
+// | Componentes do módulo/projeto                   |
+// \-------------------------------------------------/
 import { AcaoSistema } from '../../../app.acao';
 import { GrupoService } from '../grupo.service';
-import { MessageService } from '../../../shared/message/message.service';
 
 /**
- * Component responsável pela Inclusão, Alteração e Visualização de 'Grupo'.
+ * Componente responsável pela Inclusão, Alteração e Visualização de 'Grupo'.
  */
 @Component({
   selector: 'app-form-grupo',
-  templateUrl: 'form-grupo.component.html'
+  templateUrl: 'form-grupo.component.html',
 })
 export class FormGrupoComponent {
-
   private messageService: MessageService;
   private grupoService: GrupoService;
+
+  private messageResource: MessageResource;
+
   private router: Router;
 
   public acao: AcaoSistema;
@@ -30,16 +43,14 @@ export class FormGrupoComponent {
    * @param router
    * @param route
    */
-  constructor(grupoService: GrupoService, messageService: MessageService, router: Router, route: ActivatedRoute) {
+  constructor(grupoService: GrupoService, messageService: MessageService, router: Router, route: ActivatedRoute, MessageResource: MessageResourceProvider) {
     this.router = router;
     this.grupoService = grupoService;
     this.acao = new AcaoSistema(route);
     this.messageService = messageService;
+    this.messageResource = new MessageResource();
 
-    console.log(this.acao);
-
-    const id = route.snapshot.params['id'];
-    this.inicializarGrupo(id);
+    this.inicializarGrupo(route.snapshot.params['id']);
   }
 
   /**
@@ -48,7 +59,6 @@ export class FormGrupoComponent {
    * @param id
    */
   private inicializarGrupo(id: any): void {
-
     if (id !== undefined) {
       this.grupo = this.grupoService.getGrupo(id);
     }
@@ -60,13 +70,12 @@ export class FormGrupoComponent {
    * @param grupo
    */
   public salvar(grupo: any, form: FormControl): void {
-
     if (form.valid) {
-      const msg = grupo.id === undefined ? 'MSG_GRUPO_INCLUSAO' : 'MSG_GRUPO_ALTERACAO';
+      const msg = grupo.id === undefined ? 'MSG_INCLUSAO' : 'MSG_ALTERACAO';
 
       this.grupoService.salvar(grupo);
       this.router.navigate(['/grupo/listar']);
-      this.messageService.addMsgInf(msg);
+      this.messageService.addMsgInf(msg, this.messageResource.getDescription('LABEL_GRUPO'));
     }
   }
 

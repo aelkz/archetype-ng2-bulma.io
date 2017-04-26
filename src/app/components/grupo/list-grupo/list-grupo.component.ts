@@ -1,7 +1,18 @@
+// /-------------------------------------------------\
+// | Componentes angular                             |
+// \-------------------------------------------------/
 import { Component, OnInit } from '@angular/core';
 
-import { GrupoService } from '../grupo.service';
+// /-------------------------------------------------\
+// | Componentes compartilhados do projeto           |
+// \-------------------------------------------------/
 import {MessageService, ConfirmListener} from '../../../shared/message/message.service';
+import { MessageResource, MessageResourceProvider } from './../../../shared/message/message.resource';
+
+// /-------------------------------------------------\
+// | Componentes do módulo/projeto                   |
+// \-------------------------------------------------/
+import { GrupoService } from '../grupo.service';
 
 /**
  * Component responsável pela Listagem de 'Grupo'.
@@ -11,9 +22,10 @@ import {MessageService, ConfirmListener} from '../../../shared/message/message.s
   templateUrl: 'list-grupo.component.html'
 })
 export class ListGrupoComponent implements OnInit {
-
   private messageService: MessageService;
   private grupoService: GrupoService;
+
+  private messageResource: MessageResource;
 
   public grupos: any[];
 
@@ -23,9 +35,10 @@ export class ListGrupoComponent implements OnInit {
    * @param grupoService
    * @param messageService
    */
-  constructor(grupoService: GrupoService, messageService: MessageService) {
+  constructor(grupoService: GrupoService, messageService: MessageService, MessageResource: MessageResourceProvider) {
     this.grupoService = grupoService;
     this.messageService = messageService;
+    this.messageResource = new MessageResource();
   }
 
   /**
@@ -61,11 +74,11 @@ export class ListGrupoComponent implements OnInit {
   public ativar(grupo: any): void {
     const self = this;
 
-    this.messageService.addConfirmYesNo('MSG_GRUPO_CONFIRM_ATIVACAO', (): ConfirmListener => {
+    this.messageService.addConfirmYesNo('MSG_CONFIRM_ATIVACAO', (): ConfirmListener => {
       grupo.situacao.id = 1;
       grupo.situacao.descricao = 'Ativo';
       self.ngOnInit();
-      self.messageService.addMsgInf('Grupo ativado com sucesso!');
+      self.messageService.addMsgInf('MSG_ATIVACAO', this.messageResource.getDescription('LABEL_GRUPO'));
       return;
     });
   }
@@ -78,22 +91,13 @@ export class ListGrupoComponent implements OnInit {
   public inativar(grupo: any): void {
     const self = this;
 
-    this.messageService.addConfirmYesNo('MSG_GRUPO_CONFIRM_INATIVACAO', (): ConfirmListener => {
+    this.messageService.addConfirmYesNo('MSG_CONFIRM_INATIVACAO', (): ConfirmListener => {
       grupo.situacao.id = 2;
       grupo.situacao.descricao = 'Inativo';
       self.ngOnInit();
-      self.messageService.addMsgInf('Grupo inativado com sucesso!');
+      self.messageService.addMsgInf('MSG_INATIVACAO', this.messageResource.getDescription('LABEL_GRUPO'));
       return;
     });
-  }
-
-  public inativar2(grupo: any): void {
-    const self = this;
-
-    grupo.situacao.id = 2;
-    grupo.situacao.descricao = 'Inativo';
-    self.ngOnInit();
-    self.messageService.addMsgInf('Grupo inativado com sucesso!');
   }
 
 }
