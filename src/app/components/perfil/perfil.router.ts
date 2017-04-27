@@ -30,5 +30,5 @@ export const PerfilRoutes: Routes = [
         path: 'perfil',
         redirectTo: '/perfil/listar',
         pathMatch: 'full'
-    },
+    }
 ];

@@ -23,6 +23,7 @@ export class MessageResourceImpl implements MessageResource, ValidationResource 
           'LABEL_ACAO': 'Ações',
           'LABEL_GRUPO': 'Grupo',
           'LABEL_PERFIL': 'Perfil',
+          'LABEL_USUARIO': 'Usuário',
 
           'LABEL_SITUACAO': 'Situação',
           'LABEL_DESCRICAO': 'Descrição',
