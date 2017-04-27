@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class PerfilService {
+  private perfis: any[];
 
-  private perfils: any[];
   /**
    * Array para funcionalidades
    */
@@ -16,7 +16,7 @@ export class PerfilService {
    * Construtor da classe.
    */
   constructor() {
-    this.perfils = [
+    this.perfis = [
       {
         'id': 1,
         'nome': 'Perfil 1',
@@ -58,6 +58,7 @@ export class PerfilService {
         }
       }
     ];
+
 /**
  * lista de funcionalidades para simulação no form perfil
  */
@@ -69,8 +70,7 @@ export class PerfilService {
           'id': 2,
           'descricao': 'Alterar',
         },
-        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
-                     'eleifend enim, in fringilla felis dui non dolor.',
+        'descricao': 'funcionalidade teste 1',
       },
       {
         'id': 2,
@@ -79,8 +79,7 @@ export class PerfilService {
           'id': 1,
           'descricao': 'Consultar',
         },
-        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
-                     'eleifend enim, in fringilla felis dui non dolor.',
+        'descricao': 'funcionalidade teste 2',
       },
       {
         'id': 3,
@@ -89,11 +88,11 @@ export class PerfilService {
           'id': 3,
           'descricao': 'Excluir',
         },
-        'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis' +
-                     'eleifend enim, in fringilla felis dui non dolor.',
+        'descricao': 'funcionalidade teste 2',
       },
     ];
   }
+
   /**
    * Salva o 'Perfil' na base de dados.
    *
@@ -104,24 +103,26 @@ export class PerfilService {
     perfil.descricao = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.';
     perfil.situacao = { 'id': 1, 'descricao': 'Ativo' };
 
-    this.perfils.push(perfil);
+    this.perfis.push(perfil);
   }
 
   /**
-   * Retorna o array de 'perfils'.
+   * Retorna o array de 'perfis'.
    *
    * @returns any[]
    */
-  public getPerfils(): any[] {
-    return this.perfils;
+  public getPerfis(): any[] {
+    return this.perfis;
   }
 
   /**
    * Retorna a instância de 'Perfil'.
    */
   public getPerfil(id: any): any {
-    return this.perfils.filter(perfil => perfil.id === id)[0];
+    // TODO - verificar predicado de comparação com ===
+    return this.getPerfis().filter(e => e.id == id)[0];
   }
+
  /**
    * Retorna o array de funcionalidades
    * @returns any[]
@@ -129,12 +130,12 @@ export class PerfilService {
   public getFuncionalidades(): any[] {
     return this.funcionalidades;
   }
+
   /**
    * Verifica se o 'Perfil' está 'Ativo'.
    *
    * @param perfil
    */
-
   public isAtivo(perfil: any): boolean {
     return perfil.situacao.id === 1;
   }

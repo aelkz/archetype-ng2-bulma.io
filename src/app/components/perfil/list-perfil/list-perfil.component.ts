@@ -18,7 +18,7 @@ import { PerfilService } from '../perfil.service';
  */
 @Component({
   selector: 'app-list-perfil',
-  templateUrl: 'list-perfil.component.html'
+  templateUrl: './list-perfil.component.html'
 })
 export class ListPerfilComponent implements OnInit {
   private messageService: MessageService;
@@ -26,7 +26,7 @@ export class ListPerfilComponent implements OnInit {
 
   private messageResource: MessageResource;
 
-  public perfils: any[];
+  public perfis: any[];
 
   /**
    * Construtor da classe.
@@ -44,7 +44,7 @@ export class ListPerfilComponent implements OnInit {
    * Inicializa as dependências do Component.
    */
   ngOnInit() {
-    this.perfils = this.perfilService.getPerfils();
+    this.perfis = this.perfilService.getPerfis();
   }
 
   /**
@@ -90,7 +90,7 @@ export class ListPerfilComponent implements OnInit {
   public inativar(perfil: any): void {
     const self = this;
 
-    this.messageService.addConfirmYesNo('MSG_PERFIL_CONFIRM_INATIVACAO', (): ConfirmListener => {
+    this.messageService.addConfirmYesNo('MSG_CONFIRM_INATIVACAO', (): ConfirmListener => {
       perfil.situacao.id = 2;
       perfil.situacao.descricao = 'Inativo';
       self.ngOnInit();

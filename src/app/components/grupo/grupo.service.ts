@@ -75,8 +75,10 @@ export class GrupoService {
   /**
    * Retorna a instância de 'Grupo'.
    */
+
   public getGrupo(id: any): any {
-    return this.grupos.filter(grupo => grupo.id === id)[0];
+    // TODO - verificar predicado de comparação com ===
+    return this.grupos.filter(grupo => grupo.id == id)[0];
   }
 
   /**

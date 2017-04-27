@@ -21,7 +21,7 @@ import { PerfilService } from '../perfil.service';
  */
 @Component({
   selector: 'app-form-perfil',
-  templateUrl: 'form-perfil.component.html'
+  templateUrl: './form-perfil.component.html'
 })
 export class FormPerfilComponent {
 
@@ -49,14 +49,13 @@ export class FormPerfilComponent {
     this.acao = new AcaoSistema(route);
     this.messageService = messageService;
 
-    const id = route.snapshot.params['id'];
+    let id = route.snapshot.params['id'];
     this.inicializarPerfil(id);
 
     /**
      * Carrega a lista de funcionalidades vindas do service
      */
     this.funcionalidades = this.perfilService.getFuncionalidades();
-
   }
 
   /**
@@ -65,7 +64,6 @@ export class FormPerfilComponent {
    * @param id
    */
   private inicializarPerfil(id: any): void {
-
     if (id !== undefined) {
       this.perfil = this.perfilService.getPerfil(id);
     }
@@ -91,7 +89,6 @@ export class FormPerfilComponent {
    * Adiciona a funcionalidade escolhida a gride do formulario perfil
    */
   public addFuncionalidade(funcionalidade: any = {}) {
-
     funcionalidade = this.perfil.funcionalidade;
         alert(funcionalidade);
   }

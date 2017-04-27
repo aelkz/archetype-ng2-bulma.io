@@ -5,7 +5,6 @@ import { ValidationResource } from './shared/validation/validation.resource';
  * Implementação de provider responsável por prover as 'descrições' e 'mensagens' utilizadas na aplicação em um unico local.
  */
 export class MessageResourceImpl implements MessageResource, ValidationResource {
-
     private resource: Object;
 
     /**
@@ -39,6 +38,7 @@ export class MessageResourceImpl implements MessageResource, ValidationResource 
           'LABEL_GRUPO_INCLUIR': 'Incluir Grupo',
 
           'TITLE_SIGLA_SISTEMA': 'SISTEMA',
+
           'TITLE_GRUPO_LISTAR': 'LISTAR GRUPO',
           'TITLE_GRUPO_INCLUIR': 'INCLUIR GRUPO',
           'TITLE_GRUPO_ALTERAR': 'ALTERAR GRUPO',

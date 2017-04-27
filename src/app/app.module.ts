@@ -3,7 +3,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { ServiceModule } from './core/core.module';
+import { ServiceModule } from './core/service.module';
 import { MessageModule } from './shared/message/message.module';
 import { MessageResourceProvider } from './shared/message/message.resource';
 import { MessageResourceImpl } from './app.message';

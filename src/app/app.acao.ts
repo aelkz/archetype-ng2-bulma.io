@@ -19,7 +19,6 @@ export class AcaoSistema {
    * @param route
    */
   constructor(route: ActivatedRoute) {
-
     if (route !== null && route !== undefined) {
       const data = route.snapshot.data;
 

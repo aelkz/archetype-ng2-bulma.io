@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Arquétipo de front-end com framework angular",
   "homepage": "projeto.mec.gov.br",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://gitlab.mec.gov.br/?"
@@ -61,7 +62,6 @@
     "###compodoc": "node_modules/.bin/compodoc -p src/client/tsconfig.json",
     "###serve.compodoc": "node_modules/.bin/compodoc -s"
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^2.4.9",
     "@angular/compiler": "^2.4.0",
@@ -76,7 +76,7 @@
     "normalize.css": "^6.0.0",
     "rxjs": "^5.0.1",
     "systemjs": "0.20.12",
-    "zone.js": "~0.7.1"
+    "zone.js": "~0.8.9"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0",
@@ -94,6 +94,7 @@
     "@types/yargs": "^6.5.0",
     "@types/zone.js": "^0.0.27",
     "codelyzer": "~2.1.0",
+    "debug": "^2.6.4",
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.0",
     "gulp-concat": "^2.6.0",
