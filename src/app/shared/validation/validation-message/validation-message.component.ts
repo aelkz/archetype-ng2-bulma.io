@@ -2,10 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ValidationResourceProvider, ValidationResource } from '../validation.resource';
 
-/**
- * Component responsável por prover o recurso de visualização de mensagem de validação,
- * sendo capaz de detectando o erro e a mensagem a ser apresentada.
- */
+// /--------------------------------------------------\
+// | validation-message.component.ts                  |
+// |--------------------------------------------------|
+// | Responsável por prover o recursos de visualização|
+// | de mensagem de validação, interceptando o erro e |
+// | tratando a mensagem a ser apresentada.           |
+// \--------------------------------------------------/
 @Component({
   selector: 'validation-message',
   template: '<span *ngIf="for.touched || form.submitted"><p class="validation-invalid" *ngFor="let error of errors()" >{{error}}</p></span>',

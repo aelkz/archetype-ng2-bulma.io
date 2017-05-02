@@ -1,6 +1,9 @@
-/**
- * Interface provider responsável por permitir a centralização de mensagem de validação.
- */
+// /--------------------------------------------------\
+// | validation.resource.ts                           |
+// |--------------------------------------------------|
+// | Interface provider responsável por permitir a    |
+// | centralização de mensagem de validação           |
+// \--------------------------------------------------/
 export interface ValidationResource {
 
     /**

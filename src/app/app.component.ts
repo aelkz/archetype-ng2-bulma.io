@@ -1,8 +1,13 @@
+// /-------------------------------------------------\
+// | artefatos da biblioteca angular 2.x             |
+// \-------------------------------------------------/
 import { Component } from '@angular/core';
 
-/**
- * Componente principal da aplicação.
- */
+// /--------------------------------------------------\
+// | app.component.ts                                 |
+// |--------------------------------------------------|
+// | Componente root da aplicação                     |
+// \--------------------------------------------------/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

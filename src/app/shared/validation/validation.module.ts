@@ -4,9 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { ValidationMessageComponent } from './validation-message/validation-message.component';
 
-/**
- * Modulo responsável por prover recursos para simplificar a validação de campos no formulário do sistema.
- */
+// /--------------------------------------------------\
+// | validation.module.ts                             |
+// |--------------------------------------------------|
+// | Responsável por prover recursos de validação de  |
+// | campos nos formulários da aplicação              |
+// \--------------------------------------------------/
 @NgModule({
   imports: [
     CommonModule,

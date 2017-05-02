@@ -1,25 +1,27 @@
 // /-------------------------------------------------\
-// | Componentes angular                             |
+// | artefatos da biblioteca angular 2.x             |
 // \-------------------------------------------------/
 import {Component, OnInit, Input} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 
 // /-------------------------------------------------\
-// | Componentes compartilhados do projeto           |
+// | artefatos compartilhados do projeto             |
 // \-------------------------------------------------/
 import { MessageService } from '../../../shared/message/message.service';
 import { MessageResource, MessageResourceProvider } from './../../../shared/message/message.resource';
 
 // /-------------------------------------------------\
-// | Componentes do módulo/projeto                   |
+// | artefatos do módulo/projeto                     |
 // \-------------------------------------------------/
 import { AcaoSistema } from '../../../app.acao';
 import { GrupoService } from '../grupo.service';
 
-/**
- * Componente responsável pela Inclusão, Alteração e Visualização de 'Grupo'.
- */
+// /--------------------------------------------------\
+// | form-grupo.component.ts                          |
+// |--------------------------------------------------|
+// | Componente para inclusão de grupos               |
+// \--------------------------------------------------/
 @Component({
   selector: 'app-form-grupo',
   templateUrl: 'form-grupo.component.html',

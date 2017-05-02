@@ -1,9 +1,15 @@
+// /-------------------------------------------------\
+// | artefatos da biblioteca angular 2.x             |
+// \-------------------------------------------------/
 import { Injectable, EventEmitter } from '@angular/core';
 import { InternacionalizacaoPipe } from './internacionalizacao.pipe';
 
-/**
- * Classe de representação de 'Item de Mensagem'.
- */
+// /--------------------------------------------------\
+// | message.service.ts                               |
+// |--------------------------------------------------|
+// | Define os tipos de mensagem e alertas da         |
+// | aplicação.                                       |
+// \--------------------------------------------------/
 export class MessageItem {
 
     public static ALERT_TYPE_INFO = 'alert-info';

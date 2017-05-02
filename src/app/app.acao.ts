@@ -1,9 +1,14 @@
+// /-------------------------------------------------\
+// | artefatos da biblioteca angular 2.x             |
+// \-------------------------------------------------/
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-/**
- * Classe de representação de 'Ação do Sistema'.
- */
+// /--------------------------------------------------\
+// | app.acao.ts                                      |
+// |--------------------------------------------------|
+// | Classe para injetar as rotas de ação             |
+// \--------------------------------------------------/
 export class AcaoSistema {
 
   private static ACAO_LISTAR = 'listar';

@@ -1,15 +1,18 @@
+// /-------------------------------------------------\
+// | artefatos compartilhados do projeto             |
+// \-------------------------------------------------/
 import { MessageResource } from './shared/message/message.resource';
 import { ValidationResource } from './shared/validation/validation.resource';
 
-/**
- * Implementação de provider responsável por prover as 'descrições' e 'mensagens' utilizadas na aplicação em um unico local.
- */
+// /--------------------------------------------------\
+// | app.message.ts                                   |
+// |--------------------------------------------------|
+// | Provider responsável por prover as descrições e  |
+// | mensagens utilizadas na aplicação.               |
+// \--------------------------------------------------/
 export class MessageResourceImpl implements MessageResource, ValidationResource {
     private resource: Object;
 
-    /**
-     * Construtor da classe.
-     */
     constructor() {
         this.resource = {
           'required': 'Campo de preenchimento obrigatório.',
