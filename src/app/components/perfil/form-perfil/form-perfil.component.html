@@ -1,9 +1,9 @@
 <div class="caixa-centro">
   <div class="row">
     <div class="col-md-12 col-xs-12">
-      <h2 *ngIf="acao.isAcaoIncluir()">{{'TITLE_PERFIL_INCLUIR' | i18n}}</h2>
-      <h2 *ngIf="acao.isAcaoAlterar()">{{'TITLE_PERFIL_ALTERAR' | i18n}}</h2>
-      <h2 *ngIf="acao.isAcaoVisualizar()">{{'TITLE_PERFIL_VISUALIZAR' | i18n}}</h2>
+      <h2 *ngIf="acao.isAcaoIncluir()">{{'TITLE_INCLUIR' | i18n}} {{'LABEL_PERFIL' | i18n | uppercase }}</h2>
+      <h2 *ngIf="acao.isAcaoAlterar()">{{'TITLE_ALTERAR' | i18n}} {{'LABEL_PERFIL' | i18n | uppercase }}</h2>
+      <h2 *ngIf="acao.isAcaoVisualizar()">{{'TITLE_VISUALIZAR' | i18n}} {{'LABEL_PERFIL' | i18n | uppercase }}</h2>
     </div>
   </div>
 

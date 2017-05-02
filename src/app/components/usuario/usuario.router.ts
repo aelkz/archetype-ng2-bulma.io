@@ -23,7 +23,7 @@ export const UsuarioRoutes: Routes = [
   },
   {
     path: 'usuario',
-    redirectTo: '/usuario/listar',
+    redirectTo: '/usuario/incluir',
     pathMatch: 'full'
   }
 ];

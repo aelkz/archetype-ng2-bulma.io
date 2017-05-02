@@ -36,19 +36,13 @@ export class MessageResourceImpl implements MessageResource, ValidationResource 
           'LABEL_SALVAR': 'Salvar',
           'LABEL_VOLTAR': 'Voltar',
           'LABEL_CANCELAR': 'Cancelar',
-          'LABEL_GRUPO_INCLUIR': 'Incluir Grupo',
 
           'TITLE_SIGLA_SISTEMA': 'SISTEMA',
 
-          'TITLE_GRUPO_LISTAR': 'LISTAR GRUPO',
-          'TITLE_GRUPO_INCLUIR': 'INCLUIR GRUPO',
-          'TITLE_GRUPO_ALTERAR': 'ALTERAR GRUPO',
-          'TITLE_GRUPO_VISUALIZAR': 'VISUALIZAR GRUPO',
-
-          'TITLE_PERFIL_LISTAR': 'LISTAR PERFIL',
-          'TITLE_PERFIL_INCLUIR': 'INCLUIR PERFIL',
-          'TITLE_PERFIL_ALTERAR': 'ALTERAR PERFIL',
-          'TITLE_PERFIL_VISUALIZAR': 'VISUALIZAR PERFIL',
+          'TITLE_LISTAR': 'LISTAR',
+          'TITLE_INCLUIR': 'INCLUIR',
+          'TITLE_ALTERAR': 'ALTERAR',
+          'TITLE_VISUALIZAR': 'VISUALIZAR',
 
           'MSG_CONFIRM_ATIVACAO': 'Deseja realmente ativar o registro selecionado?',
           'MSG_CONFIRM_INATIVACAO': 'Deseja realmente inativar o registro selecionado?',
