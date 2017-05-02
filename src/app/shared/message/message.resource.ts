@@ -1,6 +1,10 @@
-/**
- * Interface provider responsável por permitir a centralização de 'descrições/mensagens' utilizadas na aplicação em um unico local.
- */
+// /--------------------------------------------------\
+// | message.resource.ts                              |
+// |--------------------------------------------------|
+// | Provider responsável por permitir a centralização|
+// | de descrições/mensagens utilizadas na aplicação  |
+// | em um único local.                               |
+// \--------------------------------------------------/
 export interface MessageResource {
 
     /**

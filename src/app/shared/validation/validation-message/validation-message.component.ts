@@ -1,3 +1,6 @@
+// /-------------------------------------------------\
+// | artefatos da biblioteca angular 2.x             |
+// \-------------------------------------------------/
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ValidationResourceProvider, ValidationResource } from '../validation.resource';

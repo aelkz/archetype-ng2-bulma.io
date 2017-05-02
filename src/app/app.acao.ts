@@ -18,11 +18,6 @@ export class AcaoSistema {
 
   private acaoVigente: string;
 
-  /**
-   * Construtor da classe.
-   *
-   * @param route
-   */
   constructor(route: ActivatedRoute) {
     if (route !== null && route !== undefined) {
       const data = route.snapshot.data;
