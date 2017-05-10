@@ -1,0 +1,48 @@
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-item is-brand" href="#">
+      <img src="http://bulma.io/images/bulma-type.png" alt="Bulma logo">
+    </a>
+  </div>
+
+  <div class="nav-center">
+    <a class="nav-item" href="#">
+      <span class="icon">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+    <a class="nav-item" href="#">
+      <span class="icon">
+        <i class="fa fa-twitter"></i>
+      </span>
+    </a>
+  </div>
+
+  <span id="nav-toggle" class="nav-toggle">
+    <span></span>
+  <span></span>
+  <span></span>
+  </span>
+
+  <div id='nav-menu' class="nav-right nav-menu">
+    <a class="nav-item" href="#" [routerLink]="['/']">
+        <span>Home</span>
+    </a>
+    <a class="nav-item" href="#" [routerLink]="['/perfil']">
+        <span>{{'LABEL_PERFIL' | i18n}}</span>
+    </a>
+    <a class="nav-item" href="#" [routerLink]="['/grupo']">
+        <span>{{'LABEL_GRUPO' | i18n}}</span>
+    </a>
+    <span class="nav-item">
+      <a class="button" >
+        <span class="icon">
+          <i class="fa fa-sign-in"></i>
+        </span>
+        <span>Sair</span>
+      </a>
+    </span>
+    <!-- call to user-info component -->
+    <app-ui-userinfo></app-ui-userinfo>
+  </div>
+</nav>
