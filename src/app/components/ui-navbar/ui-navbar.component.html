@@ -1,7 +1,8 @@
 <nav class="nav">
   <div class="nav-left">
+    &nbsp;
     <a class="nav-item is-brand" href="#">
-      <img src="http://bulma.io/images/bulma-type.png" alt="Bulma logo">
+      <img src="assets/images/bulma-logo.png" alt="Bulma logo">
     </a>
   </div>
 
@@ -28,20 +29,26 @@
     <a class="nav-item" href="#" [routerLink]="['/']">
         <span>Home</span>
     </a>
+    <a class="nav-item" href="#" [routerLink]="['/about']">
+        <span>About</span>
+    </a>
     <a class="nav-item" href="#" [routerLink]="['/perfil']">
         <span>{{'LABEL_PERFIL' | i18n}}</span>
     </a>
     <a class="nav-item" href="#" [routerLink]="['/grupo']">
         <span>{{'LABEL_GRUPO' | i18n}}</span>
     </a>
-    <span class="nav-item">
-      <a class="button" >
-        <span class="icon">
-          <i class="fa fa-sign-in"></i>
-        </span>
-        <span>Sair</span>
-      </a>
-    </span>
+    <!-- how to add a new button in navbar -->
+    <!-- 
+      <span class="nav-item">
+        <a class="button" >
+          <span class="icon">
+            <i class="fa fa-sign-in"></i>
+          </span>
+          <span>Sair</span>
+        </a>
+      </span>
+    -->
     <!-- call to user-info component -->
     <app-ui-userinfo></app-ui-userinfo>
   </div>

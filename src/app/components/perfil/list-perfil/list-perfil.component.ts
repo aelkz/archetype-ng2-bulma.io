@@ -23,9 +23,9 @@ import { PerfilService } from '../perfil.service';
 export class ListPerfilComponent implements OnInit {
   private messageService: MessageService;
   private perfilService: PerfilService;
-
   private messageResource: MessageResource;
-
+  
+  public toggleShowHide:boolean = true;  
   public perfis: any[];
 
   /**

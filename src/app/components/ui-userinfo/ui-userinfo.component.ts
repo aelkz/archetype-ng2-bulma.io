@@ -36,9 +36,14 @@ declare var uiUserInfoObject: any;
     .footer-button {
       text-align: center;
     }
+    .under {
+      position: relative;
+      top: 4px;
+    }
   `]
 })
 export class UiUserInfoComponent implements OnInit {
+  public toggleShowHide:boolean = false;  
 
   constructor() {
     console.log('aqui 2');

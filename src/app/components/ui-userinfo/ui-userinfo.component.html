@@ -1,16 +1,16 @@
 <span class="nav-item">
-  <a class="button is-primary" href="#" onclick="return false;">
+  <a class="button is-primary" href="#" onclick="return false;" (click)="toggleShowHide = !toggleShowHide" ngDefaultControl>
     <span class="icon">
       <i class="fa fa-user-circle-o"></i>
     </span>
     <span id='nav-user-info'>
       <div class="user-info">John Smith - 000.000.000-00</div>
-      <div class="user-info"><i class="fa fa-caret-up"></i></div>
+      <div class="user-info"><i class="fa fa-caret-up under"></i></div>
     </span>
   </a>
 </span>
 
-<div id="nav-user-info-menu" class="is-hidden">
+<div id="nav-user-info-menu" *ngIf="toggleShowHide">
   <div class="card">
     <header class="card-header"></header>
     <div class="card-content">

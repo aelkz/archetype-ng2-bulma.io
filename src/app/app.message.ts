@@ -39,6 +39,8 @@ export class MessageResourceImpl implements MessageResource, ValidationResource 
           'LABEL_SALVAR': 'Salvar',
           'LABEL_VOLTAR': 'Voltar',
           'LABEL_CANCELAR': 'Cancelar',
+          'LABEL_ADICIONAR': 'Adicionar',
+          'LABEL_NOVO': 'Novo',
 
           'TITLE_SIGLA_SISTEMA': 'SISTEMA',
 

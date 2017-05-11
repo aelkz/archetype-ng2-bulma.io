@@ -21,16 +21,22 @@ import { PerfilService } from '../perfil.service';
  */
 @Component({
   selector: 'app-form-perfil',
-  templateUrl: './form-perfil.component.html'
+  templateUrl: './form-perfil.component.html',
+  styles: [`
+    .under {
+      position: relative;
+      top: 2px;
+    }
+  `]
 })
 export class FormPerfilComponent {
-
   private messageService: MessageService;
   private perfilService: PerfilService;
   private router: Router;
 
   public acao: AcaoSistema;
   public perfil: any = {};
+  public toggleShowHide:boolean = true;  
 
   /** array da lista de funcionalidades **/
   public funcionalidades: any = {};

@@ -1,3 +1,7 @@
+// /-------------------------------------------\
+// | custom jquery component objects           |
+// \-------------------------------------------/
+
 var uiNavbarObject = (function() {
   console.log('ui-navbar.component.ts initialization');
   return {
@@ -67,16 +71,23 @@ var uiUserInfoObject = (function() {
       var $menu = $('#nav-user-info-menu');
       var $photo = $('#nav-user-info-photo');
 
+      $photo.find('img').css('border','1px solid #bbbbbb');
+      $photo.find('img').css('width','96px');
+      $photo.find('img').css('height','96px');
+
       $toggle.click(function() {
         console.log('xxx-001');
-        $photo.find('img').css('border','1px solid #bbbbbb');
-        $photo.find('img').css('width','96px');
-        $photo.find('img').css('height','96px');
-
-        $menu.toggleClass('is-hidden');
         $toggle.find('i').toggleClass('fa fa-caret-up fa fa-caret-down');
       });
 
     }
   }
 })(uiUserInfoObject||{})
+
+// /-------------------------------------------\
+// | general jquery component objects          |
+// \-------------------------------------------/
+
+$( document ).ready(function() {
+  //    
+});
