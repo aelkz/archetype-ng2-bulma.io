@@ -1,6 +1,6 @@
 <div id="{{'form-'}}{{'LABEL_PERFIL' | i18n}}" class="card" style="width:95%; margin-left: 2.5%;">
   <header class="card-header">
-    <div class="columns" style="width: 100%">
+    <div class="columns full-width">
       <div class="column is-three-quarters">
         <h2 class="card-header-title" *ngIf="acao.isAcaoIncluir()">
           {{'TITLE_INCLUIR' | i18n}} {{'LABEL_PERFIL' | i18n | uppercase }}
@@ -22,7 +22,7 @@
     </div>
   </header>
 
-  <form #formPerfil="ngForm" novalidate (ngSubmit)="salvar(perfil, formPerfil)" style="width: 100%">
+  <form #formPerfil="ngForm" novalidate (ngSubmit)="salvar(perfil, formPerfil)" class="full-width">
     <div class="card-content" *ngIf="toggleShowHide">
       <div class="content">
 
@@ -91,7 +91,7 @@
     </div>
 
     <footer class="card-footer" style="background-color: #ECECEC">
-      <div style="width: 100%; text-align: right; float: right; margin: 10px;">
+      <div class="right-align">
 
         <div *ngIf="acao.isAcaoIncluir() || acao.isAcaoAlterar()">
           <button type="button" class="button is-danger" title="{{'LABEL_CANCELAR' | i18n}}" [routerLink]="['/perfil/listar']">

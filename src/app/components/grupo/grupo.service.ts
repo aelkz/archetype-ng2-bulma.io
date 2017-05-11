@@ -17,6 +17,10 @@ export class GrupoService {
         'id': 1,
         'nome': 'Grupo 1',
         'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.',
+        'email': 'grupo1@mec.gov.br',
+        'forum': 'http://sistema.mec.gov.br/group1/questions?page=start',
+        'data': '01/01/2017',
+        'publico': false,
         'situacao': {
           'id': 1,
           'descricao': 'Ativo'
@@ -26,6 +30,10 @@ export class GrupoService {
         'id': 2,
         'nome': 'Grupo 2',
         'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.',
+        'email': 'grupo2@mec.gov.br',
+        'forum': 'http://sistema.mec.gov.br/group1/questions?page=start',
+        'data': '01/01/2017',
+        'publico': false,
         'situacao': {
           'id': 2,
           'descricao': 'Inativo'
@@ -35,6 +43,10 @@ export class GrupoService {
         'id': 3,
         'nome': 'Grupo 3',
         'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.',
+        'email': 'grupo3@mec.gov.br',
+        'forum': 'http://sistema.mec.gov.br/group1/questions?page=start',
+        'data': '01/01/2017',
+        'publico': true,
         'situacao': {
           'id': 1,
           'descricao': 'Ativo'
@@ -44,6 +56,10 @@ export class GrupoService {
         'id': 4,
         'nome': 'Grupo 4',
         'descricao': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.',
+        'email': 'grupo4@mec.gov.br',
+        'forum': 'http://sistema.mec.gov.br/group1/questions?page=start',
+        'data': '01/01/2017',
+        'publico': false,
         'situacao': {
           'id': 2,
           'descricao': 'Inativo'

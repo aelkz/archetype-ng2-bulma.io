@@ -27,6 +27,15 @@ import { PerfilService } from '../perfil.service';
       position: relative;
       top: 2px;
     }
+    .right-align {
+      width: 100%; 
+      text-align: right; 
+      float: right; 
+      margin: 10px;
+    }
+    .full-width {
+      width: 100%;
+    }
   `]
 })
 export class FormPerfilComponent {

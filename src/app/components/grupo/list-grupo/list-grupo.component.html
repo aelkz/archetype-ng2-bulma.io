@@ -1,55 +1,74 @@
-<div class="caixa-centro">
-  <div class="row">
-    <div class="col-md-12 col-xs-12">
-      <h2>{{'TITLE_LISTAR' | i18n}} {{'LABEL_GRUPO' | i18n | uppercase }}</h2>
+<div class="card" style="width:95%; margin-left: 2.5%;">
+  <header class="card-header">
+    <div class="columns" style="width: 100%">
+      <div class="column is-three-quarters">
+        <h2 class="card-header-title">
+          {{'TITLE_LISTAR' | i18n}} {{'LABEL_GRUPO' | i18n | uppercase }}
+        </h2>
+      </div>
+      <div class="column">
+        <a class="card-header-icon" href="#" onclick="return false;" (click)="toggleShowHide = !toggleShowHide" ngDefaultControl style="display: table-cell; text-align: right; float: right;">
+          <span class="icon">
+            <i class="fa fa-angle-down"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="card-content" *ngIf="toggleShowHide">
+    <div class="content">
+      <div class="field is-horizontal">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{{'LABEL_NOME' | i18n}}</th>
+              <th>{{'LABEL_DESCRICAO' | i18n}}</th>
+              <th>{{'LABEL_EMAIL' | i18n}}</th>
+              <th>{{'LABEL_FORUM' | i18n}}</th>
+              <th>{{'LABEL_DATA' | i18n}}</th>
+              <th>{{'LABEL_PUBLICO' | i18n}}</th>
+              <th>{{'LABEL_SITUACAO' | i18n}}</th>
+              <th>{{'LABEL_ACAO' | i18n}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd" *ngFor="let grupo of grupos">
+              <td class="text-left">{{grupo.nome}}</td>
+              <td class="text-left">{{grupo.descricao}}</td>
+              <td class="text-left">{{grupo.email}}</td>
+              <td class="text-left">{{grupo.forum}}</td>
+              <td class="text-left">{{grupo.data}}</td>
+              <td class="text-left">{{grupo.publico}}</td>
+              <td class="text-center">{{grupo.situacao.descricao}}</td>
+              <td class="text-center">
+                <button type="button" class="button" title="{{'LABEL_VISUALIZAR' | i18n}}" [routerLink]="['/grupo/', grupo.id, 'visualizar']">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+
+                <button type="button" class="button is-info" title="{{'LABEL_ALTERAR' | i18n}}" [routerLink]="['/grupo/', grupo.id, 'alterar']">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                </button>
+
+                <button type="button" class="button is-success" title="{{'LABEL_ATIVAR' | i18n}}" (click)="ativar(grupo)" *ngIf="isInativo(grupo)">
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                </button>
+
+                <button type="button" class="button is-danger" title="{{'LABEL_INATIVAR' | i18n}}" (click)="inativar(grupo)" *ngIf="isAtivo(grupo)">
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-12 col-xs-12 text-right">
-      <button type="button" class="btn btn-link" [routerLink]="['/grupo/incluir']">
-         <span>{{'LABEL_INCLUIR' | i18n}} {{'LABEL_GRUPO' | i18n | uppercase }}</span>
+  <footer class="card-footer" style="background-color: #ECECEC">
+    <div style="width: 100%; text-align: right; float: right; margin: 10px;">
+      <button type="button" class="button is-info" [routerLink]="['/grupo/incluir']">
+         <span>{{'LABEL_NOVO' | i18n}}</span>
       </button>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12 col-xs-12 text-right">
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>{{'LABEL_NOME' | i18n}}</th>
-            <th>{{'LABEL_DESCRICAO' | i18n}}</th>
-            <th>{{'LABEL_SITUACAO' | i18n}}</th>
-            <th>{{'LABEL_ACAO' | i18n}}</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr class="odd" *ngFor="let grupo of grupos">
-            <td class="col-md-3 col-xs-3 text-left">{{grupo.nome}}</td>
-            <td class="col-md-5 col-xs-5 text-left">{{grupo.descricao}}</td>
-            <td class="col-md-1 col-xs-2 text-center">{{grupo.situacao.descricao}}</td>
-            <td class="col-md-3 col-xs-2 text-center">
-              <button type="button" class="btn btn-info" title="{{'LABEL_VISUALIZAR' | i18n}}" [routerLink]="['/grupo/', grupo.id, 'visualizar']">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-
-              <button type="button" class="btn btn-primary" title="{{'LABEL_ALTERAR' | i18n}}" [routerLink]="['/grupo/', grupo.id, 'alterar']">
-                  <i class="fa fa-pencil" aria-hidden="true"></i>
-              </button>
-
-              <button type="button" class="btn btn-success" title="{{'LABEL_ATIVAR' | i18n}}" (click)="ativar(grupo)" *ngIf="isInativo(grupo)">
-                  <i class="fa fa-power-off" aria-hidden="true"></i>
-              </button>
-
-              <button type="button" class="btn btn-danger" title="{{'LABEL_INATIVAR' | i18n}}" (click)="inativar(grupo)" *ngIf="isAtivo(grupo)">
-                  <i class="fa fa-power-off" aria-hidden="true"></i>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-  </div>
+  </footer>
+</div>

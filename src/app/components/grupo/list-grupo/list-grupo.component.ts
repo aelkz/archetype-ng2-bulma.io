@@ -24,9 +24,9 @@ import { GrupoService } from '../grupo.service';
 export class ListGrupoComponent implements OnInit {
   private messageService: MessageService;
   private grupoService: GrupoService;
-
   private messageResource: MessageResource;
 
+  public toggleShowHide:boolean = true;  
   public grupos: any[];
 
   /**

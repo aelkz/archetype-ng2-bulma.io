@@ -1,4 +1,4 @@
-<div id="{{'form-'}}{{'LABEL_PERFIL' | i18n}}" class="card" style="width:95%; margin-left: 2.5%;">
+<div class="card" style="width:95%; margin-left: 2.5%;">
   <header class="card-header">
     <div class="columns" style="width: 100%">
       <div class="column is-three-quarters">
@@ -29,10 +29,10 @@
           </thead>
           <tbody>
             <tr class="odd" *ngFor="let perfil of perfis">
-              <td class="col-md-3 col-xs-3 text-left">{{perfil.nome}}</td>
-              <td class="col-md-5 col-xs-5 text-left">{{perfil.descricao}}</td>
-              <td class="col-md-1 col-xs-2 text-center">{{perfil.situacao.descricao}}</td>
-              <td class="col-md-3 col-xs-2 text-center">
+              <td class="text-left">{{perfil.nome}}</td>
+              <td class="text-left">{{perfil.descricao}}</td>
+              <td class="text-center">{{perfil.situacao.descricao}}</td>
+              <td class="text-center">
                 <button type="button" class="button" title="{{'LABEL_VISUALIZAR' | i18n}}" [routerLink]="['/perfil/', perfil.id, 'visualizar']">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
