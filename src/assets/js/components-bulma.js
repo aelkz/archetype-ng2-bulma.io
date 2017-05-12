@@ -84,6 +84,15 @@ var uiUserInfoObject = (function() {
   }
 })(uiUserInfoObject||{})
 
+var uiFooterObject = (function() {
+  console.log('ui-footer.component.ts initialization');
+  return {
+    init: function() {
+      console.log('ui-footer.component.ts:init() called.');
+    }
+  }
+})(uiFooterObject||{})
+
 // /-------------------------------------------\
 // | general jquery component objects          |
 // \-------------------------------------------/

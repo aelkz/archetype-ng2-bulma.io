@@ -18,7 +18,7 @@
   <div class="card-content" *ngIf="toggleShowHide">
     <div class="content">
       <div class="field is-horizontal">
-        <table class="table">
+        <table class="table is-striped is-narrow">
           <thead>
             <tr>
               <th>{{'LABEL_NOME' | i18n}}</th>
@@ -28,7 +28,7 @@
               <th>{{'LABEL_DATA' | i18n}}</th>
               <th>{{'LABEL_PUBLICO' | i18n}}</th>
               <th>{{'LABEL_SITUACAO' | i18n}}</th>
-              <th>{{'LABEL_ACAO' | i18n}}</th>
+              <th style="position: relative; min-width: 150px;">{{'LABEL_ACAO' | i18n}}</th>
             </tr>
           </thead>
           <tbody>

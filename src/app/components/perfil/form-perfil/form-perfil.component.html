@@ -1,4 +1,4 @@
-<div id="{{'form-'}}{{'LABEL_PERFIL' | i18n}}" class="card" style="width:95%; margin-left: 2.5%;">
+<div class="card" style="width:95%; margin-left: 2.5%;">
   <header class="card-header">
     <div class="columns full-width">
       <div class="column is-three-quarters">
@@ -31,8 +31,7 @@
         </div>
         <div class="field">
           <p class="control is-expanded has-icons-left">
-             <input id="inputNome" type="text" class="input" title="{{'LABEL_NOME' | i18n}}" [(ngModel)]="perfil.nome" #perfilNome="ngModel"
-              name="nome" required maxlength="50" [disabled]="acao.isAcaoVisualizar()">
+             <input id="inputNome" type="text" class="input" title="{{'LABEL_NOME' | i18n}}" [(ngModel)]="perfil.nome" #perfilNome="ngModel" name="nome" required maxlength="50" [disabled]="acao.isAcaoVisualizar()">
             <span class="icon is-small is-left">
               <i class="fa fa-user"></i>
             </span>
@@ -41,7 +40,7 @@
         </div>
 
         <div class="field-label is-normal" style="text-align: left;">
-          <label for="inputNome" class="required">{{'LABEL_DESCRICAO' | i18n}}:</label>
+          <label for="inputDescricao" class="required">{{'LABEL_DESCRICAO' | i18n}}:</label>
         </div>
         <div class="field">
           <p class="control is-expanded">
@@ -55,8 +54,7 @@
             <label for="inputFuncionalidade" class="required">{{'LABEL_FUNCIONALIDADE' | i18n}}:</label>
           </div>
           <div class="field is-grouped">
-            <input type="text" id="inputFuncionalidade" list="listaFuncionalidade" class="input" data-live-search="true" title="{{'LABEL_FUNCIONALIDADE' | i18n}}"
-              [(ngModel)]="perfil.funcionalidade" #perfilFuncionalidade="ngModel" name="funcionalidade" required maxlength="50"
+            <input type="text" id="inputFuncionalidade" list="listaFuncionalidade" class="input" data-live-search="true" title="{{'LABEL_FUNCIONALIDADE' | i18n}}" [(ngModel)]="perfil.funcionalidade" #perfilFuncionalidade="ngModel" name="funcionalidade" required maxlength="50"
               [disabled]="acao.isAcaoVisualizar()">
             <datalist id="listaFuncionalidade">
               <option *ngFor="let funcionalidade of funcionalidades" [value]="funcionalidade.nome">

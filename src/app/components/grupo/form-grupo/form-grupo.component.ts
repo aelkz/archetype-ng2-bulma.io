@@ -25,15 +25,29 @@ import { GrupoService } from '../grupo.service';
 @Component({
   selector: 'app-form-grupo',
   templateUrl: 'form-grupo.component.html',
+  styles: [`
+  .under {
+    position: relative;
+    top: 2px;
+  }
+  .right-align {
+    width: 100%; 
+    text-align: right; 
+    float: right; 
+    margin: 10px;
+  }
+  .full-width {
+    width: 100%;
+  }
+`]
 })
 export class FormGrupoComponent {
   private messageService: MessageService;
   private grupoService: GrupoService;
-
   private messageResource: MessageResource;
-
   private router: Router;
 
+  public toggleShowHide:boolean = true;  
   public acao: AcaoSistema;
   public grupo: any = {};
 

@@ -10,6 +10,7 @@ import { AboutModule } from '../about/about.module';
 
 import { UiNavbarComponent } from '../ui-navbar/ui-navbar.component';
 import { UiUserInfoComponent } from '../ui-userinfo/ui-userinfo.component';
+import { UiFooterComponent } from '../ui-footer/ui-footer.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { UiUserInfoComponent } from '../ui-userinfo/ui-userinfo.component';
     PerfilModule,
     AboutModule
   ],
-  exports: [UiNavbarComponent, UiUserInfoComponent],
-  declarations: [HomeComponent, UiNavbarComponent, UiUserInfoComponent]
+  exports: [UiNavbarComponent, UiUserInfoComponent, UiFooterComponent],
+  declarations: [HomeComponent, UiNavbarComponent, UiUserInfoComponent, UiFooterComponent]
 })
 export class HomeModule { }

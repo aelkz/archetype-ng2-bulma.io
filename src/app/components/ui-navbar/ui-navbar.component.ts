@@ -22,12 +22,15 @@ declare var uiNavbarObject: any;
     .dropdown-menu li{margin-bottom:5px;white-space:nowrap}
     .dropdown-menu{position:fixed;width:100%;top:80px}
     .dropdown-menu{font-size:1.2em!important}
+    nav {
+      background-color: #F5F5F5;
+    }
   `]
 })
 export class UiNavbarComponent implements OnInit {
 
   constructor() {
-    console.log('aqui 1');
+    console.log('navbar constructor initialized');
   }
 
   init() {

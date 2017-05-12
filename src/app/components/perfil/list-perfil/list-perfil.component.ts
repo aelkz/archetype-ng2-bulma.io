@@ -1,13 +1,14 @@
 // /-------------------------------------------------\
 // | Componentes angular                             |
 // \-------------------------------------------------/
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
 
 // /-------------------------------------------------\
 // | Componentes compartilhados do projeto           |
 // \-------------------------------------------------/
 import { MessageService, ConfirmListener } from '../../../shared/message/message.service';
 import { MessageResource, MessageResourceProvider } from './../../../shared/message/message.resource';
+import { Animations } from './../../../core/animations/animations';
 
 // /-------------------------------------------------\
 // | Componentes do módulo/projeto                   |
@@ -18,14 +19,15 @@ import { PerfilService } from '../perfil.service';
  */
 @Component({
   selector: 'app-list-perfil',
-  templateUrl: './list-perfil.component.html'
+  templateUrl: './list-perfil.component.html',
+  animations: [ Animations.slideInOut ]
 })
 export class ListPerfilComponent implements OnInit {
   private messageService: MessageService;
   private perfilService: PerfilService;
   private messageResource: MessageResource;
   
-  public toggleShowHide:boolean = true;  
+  private collapsed: boolean;
   public perfis: any[];
 
   /**
@@ -38,6 +40,7 @@ export class ListPerfilComponent implements OnInit {
     this.perfilService = perfilService;
     this.messageService = messageService;
     this.messageResource = new MessageResource();
+     this.collapsed = true;
   }
 
   /**
@@ -45,6 +48,18 @@ export class ListPerfilComponent implements OnInit {
    */
   ngOnInit() {
     this.perfis = this.perfilService.getPerfis();
+  }
+
+  public isCollapsed(): boolean {
+    return this.collapsed;
+  }
+
+  public setCollapsed(): void {
+    this.collapsed = true;
+  }
+
+  public toggleMenu(): void {
+    this.collapsed = !this.collapsed;
   }
 
   /**

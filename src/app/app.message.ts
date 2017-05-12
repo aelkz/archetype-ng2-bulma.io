@@ -46,7 +46,7 @@ export class MessageResourceImpl implements MessageResource, ValidationResource 
           'LABEL_ADICIONAR': 'Adicionar',
           'LABEL_NOVO': 'Novo',
 
-          'TITLE_SIGLA_SISTEMA': 'SISTEMA',
+          'TITLE_SIGLA_SISTEMA': 'SISTEMA foo.bar',
 
           'TITLE_LISTAR': 'LISTAR',
           'TITLE_INCLUIR': 'INCLUIR',

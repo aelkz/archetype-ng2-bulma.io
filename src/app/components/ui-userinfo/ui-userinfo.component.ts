@@ -46,7 +46,7 @@ export class UiUserInfoComponent implements OnInit {
   public toggleShowHide:boolean = false;  
 
   constructor() {
-    console.log('aqui 2');
+    console.log('userinfo constructor initialized');
   }
 
   init() {
