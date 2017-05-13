@@ -1,7 +1,13 @@
 import { trigger, state, transition, animate, style } from '@angular/core';
 
 export class Animations {
-    public static slideInOut = trigger('slideInOut', [
+
+  // /------------------------------------------------------------\
+  // | animation:slideInOut                                       |
+  // | transition -> slide left                                   |
+  // | transition -> slide right                                  |
+  // \------------------------------------------------------------/
+  public static slideInOut = trigger('slideInOut', [
         state('true', style({transform: 'translate3d(0, 0, 0)'})),
         state('false', style({transform: 'translate3d(100%, 0, 0)'})),
         transition('1 => 0', animate('500ms ease-in')),
@@ -13,6 +19,11 @@ export class Animations {
         // transition('0 => 1', animate('500ms', style({transform: 'translateX(100%)', opacity: 0})))
     ]);
 
+  // /------------------------------------------------------------\
+  // | animation:showHide                                         |
+  // | transition -> shrink                                       |
+  // | transition -> show                                         |
+  // \------------------------------------------------------------/
   public static showHide = trigger('showHide', [
     state('true', style({
       'height': '*',
@@ -20,12 +31,12 @@ export class Animations {
       })
     ),
     state('false', style({
-      'display': 'none',
-      'height': '0px'
+      'height': '0px',
+      'display': 'none'
       })
     ),
-    transition('1 => 0', animate(250, style({height: 0}))),
-    transition('0 => 1', animate(250, style({height: '*'})))
+    transition('1 => 0', animate(400, style({height: 0}))),
+    transition('0 => 1', animate(100, style({height: '*'})))
   ]);
 
   public static showHideTemp = trigger('showHide', [
