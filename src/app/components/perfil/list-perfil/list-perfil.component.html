@@ -9,7 +9,8 @@
       <div class="column">
         <a class="card-header-icon" href="#" onclick="return false;" (click)="toggleMenu()" ngDefaultControl style="display: table-cell; text-align: right; float: right;">
           <span class="icon">
-            <i class="fa fa-angle-down"></i>
+            <i class="fa fa-angle-down" *ngIf="isCollapsed()"></i>
+            <i class="fa fa-angle-up" *ngIf="!isCollapsed()"></i>
           </span>
         </a>
       </div>

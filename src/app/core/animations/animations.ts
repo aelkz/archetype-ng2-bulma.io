@@ -1,6 +1,9 @@
 import { trigger, state, transition, animate, style } from '@angular/core';
 
 export class Animations {
+  //'-webkit-transform','-moz-transform','-o-transform','-ms-transform','transform'
+  // https://ianlunn.github.io/Hover/
+  // https://www.w3schools.com/css/css3_2dtransforms.asp
 
   // /------------------------------------------------------------\
   // | animation:slideInOut                                       |
@@ -10,8 +13,8 @@ export class Animations {
   public static slideInOut = trigger('slideInOut', [
         state('true', style({transform: 'translate3d(0, 0, 0)'})),
         state('false', style({transform: 'translate3d(100%, 0, 0)'})),
-        transition('1 => 0', animate('500ms ease-in')),
-        transition('0 => 1', animate('500ms ease-out'))
+        transition('1 => 0', animate('100ms ease-in')),
+        transition('0 => 1', animate('300ms ease-out'))
         // OR
         // state('true', style({transform: 'translateX(100%)', opacity: 0})),
         // state('false', style({transform: 'translateX(0)', 'opacity': 1})),
@@ -26,13 +29,37 @@ export class Animations {
   // \------------------------------------------------------------/
   public static showHide = trigger('showHide', [
     state('true', style({
-      'height': '*',
       'display': 'block'
       })
     ),
     state('false', style({
-      'height': '0px',
       'display': 'none'
+      })
+    ),
+    transition('0 => 1', [
+      style({
+        opacity: 0,
+        transform: 'scale(1,0.5)'
+      }),
+      animate('0.6s ease-out')
+    ]),
+    transition('1 => 0', [
+      animate('0.6s ease-out', style({
+        opacity: 0,
+        transform: 'scale(1,0)'
+      }))
+    ])
+  ]);
+
+  public static showHideX1 = trigger('showHideX1', [
+    state('true', style({
+        'height': '*',
+        'display': 'block'
+      })
+    ),
+    state('false', style({
+        'height': '0px',
+        'display': 'none'
       })
     ),
     transition('1 => 0', animate(400, style({height: 0}))),
@@ -63,6 +90,49 @@ export class Animations {
   // | transition -> pop scale and bounce                         |
   // \------------------------------------------------------------/
   public static showPopScale = trigger('showPopScale', [
+    state('false', style({opacity: 0.8, transform: 'translateY(100%) scale(0)'})),
+    state('true', style({opacity: 1, transform: 'translateY(0) scale(1)'})),
+    transition('1 => 0', [
+      style({
+        opacity: 0.8,
+        transform: 'scale(1.1)'
+      }),
+      animate('0.2s ease-in')
+    ]),
+    transition('0 => 1', [
+      animate('0.2s 10 ease-out', style({
+        opacity: 0,
+        transform: 'scale(0.25)'
+      }))
+    ])
+  ]);
+
+  public static showPopScaleX3 = trigger('showPopScaleX3', [
+    state('false', style({opacity: 0.8, transform: 'translateY(100%) scale(0)'})),
+    state('true', style({opacity: 1, transform: 'translateY(0) scale(1)'})),
+    transition('1 => 0', [
+      style({
+        opacity: 1,
+        transform: 'scale(1.1)'
+      }),
+      animate('0.2s ease-in')
+    ]),
+    transition('0 => 1', [
+      animate('0.2s 10 ease-out', style({
+        opacity: 0,
+        transform: 'scale(0.1)'
+      }))
+    ])
+  ]);
+
+  public static showPopScaleX2 = trigger('showPopScaleX2', [
+    state('false', style({opacity: 0.8, transform: 'translateY(100%) scale(0)'})),
+    state('true', style({opacity: 1, transform: 'translateY(0) scale(1)'})),
+    transition('1 => 0', animate('300ms')),
+    transition('0 => 1', animate('500ms'))
+  ]);
+
+  public static showPopScaleX1 = trigger('showPopScaleX1', [
     state('true', style({
         'height': '*',
         'width': '*',
@@ -75,38 +145,17 @@ export class Animations {
         'display': 'none'
       })
     ),
-    transition('1 => 0',
-      animate(400, style({height: 0}))
-    ),
-    transition('0 => 1',
-      animate(100, style({height: '*'}))
+    transition('1 <=> 0',
+      animate('100ms ease-out')
     )
   ]);
 
-  public static showHideTemp = trigger('showHide', [
-    state('true', style({
-        '-webkit-transform': 'translate3d(0px, 0px, 0px)',
-        '-moz-transform': 'translate3d(0px, 0px, 0px)',
-        '-o-transform': 'translate3d(0px, 0px, 0px)',
-        '-ms-transform': 'translate3d(0px, 0px, 0px)',
-        'transform': 'translate3d(0px, 0px, 0px)',
-        'display': 'block'
-      })
-    ),
-    state('false', style({
-        '-webkit-transform': 'translate3d(0px, -10%, 0px)',
-        '-moz-transform': 'translate3d(0px, -10%, 0px)',
-        '-o-transform': 'translate3d(0px, -10%, 0px)',
-        '-ms-transform': 'translate3d(0px, -10%, 0px)',
-        'transform': 'translate3d(0px, -10%, 0px)',
-        'display': 'none'
-      })
-    ),
-    transition('1 => 0', animate('500ms ease-in')),
-    transition('0 => 1', animate('500ms ease-out'))
-  ]);
-
-  public static showHideFast = trigger('showHide', [
+  // /------------------------------------------------------------\
+  // | animation:showHideFast                                     |
+  // | transition -> hide fast                                    |
+  // | transition -> show fast                                    |
+  // \------------------------------------------------------------/
+  public static showHideFast = trigger('showHideFast', [
       state('true', style({
           'display': 'block'
         })
@@ -117,6 +166,6 @@ export class Animations {
       ),
       transition('1 => 0', animate('10ms ease-in')),
       transition('0 => 1', animate('10ms ease-out'))
-    ]);
+  ]);
 
 }

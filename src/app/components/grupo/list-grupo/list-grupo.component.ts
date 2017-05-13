@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 // \-------------------------------------------------/
 import {MessageService, ConfirmListener} from '../../../shared/message/message.service';
 import { MessageResource, MessageResourceProvider } from './../../../shared/message/message.resource';
+import { Animations } from './../../../core/animations/animations';
 
 // /-------------------------------------------------\
 // | Componentes do módulo/projeto                   |
@@ -19,14 +20,15 @@ import { GrupoService } from '../grupo.service';
  */
 @Component({
   selector: 'app-list-grupo',
-  templateUrl: 'list-grupo.component.html'
+  templateUrl: 'list-grupo.component.html',
+  animations: [ Animations.showHideFast ]
 })
 export class ListGrupoComponent implements OnInit {
   private messageService: MessageService;
   private grupoService: GrupoService;
   private messageResource: MessageResource;
 
-  public toggleShowHide:boolean = true;  
+  private collapsed: boolean;
   public grupos: any[];
 
   /**
@@ -39,6 +41,7 @@ export class ListGrupoComponent implements OnInit {
     this.grupoService = grupoService;
     this.messageService = messageService;
     this.messageResource = new MessageResource();
+    this.collapsed = true;
   }
 
   /**
@@ -46,6 +49,18 @@ export class ListGrupoComponent implements OnInit {
    */
   ngOnInit() {
     this.grupos = this.grupoService.getGrupos();
+  }
+
+  public isCollapsed(): boolean {
+    return this.collapsed;
+  }
+
+  public setCollapsed(): void {
+    this.collapsed = true;
+  }
+
+  public toggleMenu(): void {
+    this.collapsed = !this.collapsed;
   }
 
   /**

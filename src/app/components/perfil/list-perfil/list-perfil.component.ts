@@ -40,7 +40,7 @@ export class ListPerfilComponent implements OnInit {
     this.perfilService = perfilService;
     this.messageService = messageService;
     this.messageResource = new MessageResource();
-     this.collapsed = true;
+    this.collapsed = true;
   }
 
   /**
