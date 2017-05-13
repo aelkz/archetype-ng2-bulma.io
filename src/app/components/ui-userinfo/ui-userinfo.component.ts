@@ -4,6 +4,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+// /-------------------------------------------------\
+// | Componentes compartilhados do projeto           |
+// \-------------------------------------------------/
+import { Animations } from './../../core/animations/animations';
+
 // /--------------------------------------------------\
 // | form-grupo.component.ts                          |
 // |--------------------------------------------------|
@@ -14,39 +19,29 @@ declare var uiUserInfoObject: any;
 @Component({
   selector: 'app-ui-userinfo',
   templateUrl: 'ui-userinfo.component.html',
-  styles: [` 
-    .user-info { display: inline; }
-    #nav-user-info-menu {
-      position: absolute; 
-      width: 350px; 
-      text-align: right; 
-      top:45px; 
-      margin-left: -80px;
-    }
-    hr.small-line {
-      position: relative; 
-      top: -15px;
-    }
-    .user-info-profile-button {
-      position: relative; top: -30px;
-    }
-    .card-footer {
-      background-color: #dddddd;
-    }
-    .footer-button {
-      text-align: center;
-    }
-    .under {
-      position: relative;
-      top: 4px;
-    }
-  `]
+  animations: [ Animations.showHide ],
+  styleUrls: ['ui-userinfo.component.scss']
 })
 export class UiUserInfoComponent implements OnInit {
-  public toggleShowHide:boolean = false;  
+  public toggleShowHide:boolean = false;
+
+  private collapsed: boolean;
 
   constructor() {
     console.log('userinfo constructor initialized');
+    this.collapsed = true;
+  }
+
+  public isCollapsed(): boolean {
+    return this.collapsed;
+  }
+
+  public setCollapsed(): void {
+    this.collapsed = true;
+  }
+
+  public toggleMenu(): void {
+    this.collapsed = !this.collapsed;
   }
 
   init() {

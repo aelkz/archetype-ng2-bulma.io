@@ -39,6 +39,50 @@ export class Animations {
     transition('0 => 1', animate(100, style({height: '*'})))
   ]);
 
+  // /------------------------------------------------------------\
+  // | animation:flyInOut                                         |
+  // | transition -> left to right                                |
+  // | transition -> * to right                                   |
+  // | https://angular.io/resources/images/devguide/animations/   |
+  // | animation_enter_leave.gif                                  |
+  // \------------------------------------------------------------/
+  public static flyInOut = trigger('flyInOut', [
+    state('in', style({transform: 'translateX(0)'})),
+    transition('void => *', [
+      style({transform: 'translateX(-100%)'}),
+      animate(100)
+    ]),
+    transition('* => void', [
+      animate(100, style({transform: 'translateX(100%)'}))
+    ])
+  ]);
+
+  // /------------------------------------------------------------\
+  // | animation:showPopScale                                     |
+  // | transition -> shrink and hide                              |
+  // | transition -> pop scale and bounce                         |
+  // \------------------------------------------------------------/
+  public static showPopScale = trigger('showPopScale', [
+    state('true', style({
+        'height': '*',
+        'width': '*',
+        'display': 'block'
+      })
+    ),
+    state('false', style({
+        'height': '0px',
+        'width': '0px',
+        'display': 'none'
+      })
+    ),
+    transition('1 => 0',
+      animate(400, style({height: 0}))
+    ),
+    transition('0 => 1',
+      animate(100, style({height: '*'}))
+    )
+  ]);
+
   public static showHideTemp = trigger('showHide', [
     state('true', style({
         '-webkit-transform': 'translate3d(0px, 0px, 0px)',

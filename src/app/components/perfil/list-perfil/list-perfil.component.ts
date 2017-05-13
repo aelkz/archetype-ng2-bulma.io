@@ -1,7 +1,7 @@
 // /-------------------------------------------------\
 // | Componentes angular                             |
 // \-------------------------------------------------/
-import { Component, OnInit, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 // /-------------------------------------------------\
 // | Componentes compartilhados do projeto           |
