@@ -19,12 +19,10 @@ declare var uiUserInfoObject: any;
 @Component({
   selector: 'app-ui-userinfo',
   templateUrl: 'ui-userinfo.component.html',
-  animations: [ Animations.showHide ],
+  animations: [ Animations.showPopScale ],
   styleUrls: ['ui-userinfo.component.scss']
 })
 export class UiUserInfoComponent implements OnInit {
-  public toggleShowHide:boolean = false;
-
   private collapsed: boolean;
 
   constructor() {

@@ -1,16 +1,17 @@
 <span class="nav-item">
-  <a class="button is-primary" href="#" onclick="return false;" (click)="toggleShowHide = !toggleShowHide" ngDefaultControl>
+  <a class="button is-primary" href="#" onclick="return false;" (click)="toggleMenu()" ngDefaultControl>
     <span class="icon">
       <i class="fa fa-user-circle-o"></i>
     </span>
     <span id='nav-user-info'>
       <div class="user-info">John Smith - 000.000.000-00</div>
-      <div class="user-info"><i class="fa fa-caret-up under"></i></div>
+      <div class="user-info" *ngIf="isCollapsed()"><i class="fa fa-caret-up under"></i></div>
+      <div class="user-info" *ngIf="!isCollapsed()"><i class="fa fa-caret-down under"></i></div>
     </span>
   </a>
 </span>
 
-<div id="nav-user-info-menu" *ngIf="toggleShowHide">
+<div id="nav-user-info-menu" [@showPopScale]="!isCollapsed()">
   <div class="card">
     <header class="card-header"></header>
     <div class="card-content">
@@ -28,7 +29,7 @@
             View Profile
           </a>
         </div>
-      </div>    
+      </div>
       <div class="content">
         <small><b>Last access:</b> 11:09 PM - 1 Jan 2016</small>
       </div>
