@@ -20,13 +20,13 @@ import { PerfilService } from '../perfil.service';
 @Component({
   selector: 'app-list-perfil',
   templateUrl: './list-perfil.component.html',
-  animations: [ Animations.slideInOut ]
+  animations: [ Animations.showHide ]
 })
 export class ListPerfilComponent implements OnInit {
   private messageService: MessageService;
   private perfilService: PerfilService;
   private messageResource: MessageResource;
-  
+
   private collapsed: boolean;
   public perfis: any[];
 
