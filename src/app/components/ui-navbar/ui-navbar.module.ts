@@ -12,13 +12,15 @@ import { RouterModule } from '@angular/router';
 import { UiNavbarComponent } from './ui-navbar.component';
 
 import { UiNotificationModule } from './../ui-notification/ui-notification.module';
+import { UiGovernmentNavbarModule } from './../ui-government-navbar/ui-government-navbar.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    UiNotificationModule
+    UiNotificationModule,
+    UiGovernmentNavbarModule
   ],
   declarations: [UiNavbarComponent]
 })

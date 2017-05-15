@@ -143,6 +143,9 @@ $.IsAwesome.options = {
 
 function _init() {
 
+  var $vlibras = $('#brasil-vlibras');
+  $vlibras.css('display', 'none');
+
   $.IsAwesome.sidebar = function(menu, main, sidenav) {
     var $icon = $(menu).find('i');
     var openIcon = $.IsAwesome.options.openSideBarIcon;
