@@ -1,12 +1,15 @@
 // /-------------------------------------------\
 // | custom jquery component objects           |
 // \-------------------------------------------/
+if (typeof jQuery === "undefined") {
+  throw new Error("this application requires jQuery");
+}
 
 var uiNavbarObject = (function() {
-  console.log('ui-navbar.component.ts initialization');
+  console.log('ui-calendar.component.ts initialization');
   return {
     init: function() {
-      console.log('ui-navbar.component.ts:init() called.');
+      console.log('ui-calendar.component.ts:init() called.');
 
       var $toggle = $('#nav-toggle');
       var $menu = $('#nav-menu');
@@ -86,3 +89,84 @@ var uiFooterObject = (function() {
 $( document ).ready(function() {
   //
 });
+
+// /-------------------------------------------\
+// | is-awesome github project functions       |
+// \-------------------------------------------/
+$(function () {
+  "use strict";
+
+  _init();
+
+  $.IsAwesome.scrolling('.scrollable-items', '180px');
+  $.IsAwesome.tree('.menu-list');
+  $.IsAwesome.tabs('.tabs');
+  $.IsAwesome.modals(
+    '.modal-button',
+    '.modal-background',
+    '.modal-close'
+  );
+  $('.notification button').click(function(){
+    $(this).parent().hide();
+  });
+});
+
+$.IsAwesome = {};
+
+//IsAwesome options
+$.IsAwesome.options = {
+  animationSpeed: 500,
+  sideBarWidth: '260px',
+  sreenSize: $( window ).width(),
+  //icons
+  closeSideBarIcon: 'fa-close',
+  openSideBarIcon: 'fa-bars',
+  starEmptyIcon: 'fa-star-o',
+  starIcon: 'fa-star'
+};
+
+function _init() {
+  $.IsAwesome.sidebar = function(menu, main, sidenav) {
+    var $icon = $(menu).find('i');
+    var openIcon = $.IsAwesome.options.openSideBarIcon;
+    var closeIcon = $.IsAwesome.options.closeSideBarIcon;
+
+    $(menu).on('click', function (e) {
+      if($icon.hasClass(openIcon)){
+        openNav(main, sidenav);
+      }
+      if($icon.hasClass(closeIcon)){
+        closeNav(main, sidenav);
+      }
+      $icon.toggleClass(closeIcon);
+      $icon.toggleClass(openIcon);
+    });
+
+    $(main).click(function(){
+      if($icon.hasClass(closeIcon)){
+        closeNav(main, sidenav);
+        $icon.removeClass(closeIcon);
+        $icon.addClass(openIcon);
+      }
+    });
+  };
+
+  $.IsAwesome.scrolling = function(id, h){
+    $(id).slimScroll({
+      height: h,
+      size: '3px'
+    });
+  };
+
+  function openNav(main, sidenav) {
+    var width = $.IsAwesome.options.sideBarWidth;
+    $(sidenav).css('width', width);
+    $(main).addClass('overlay');
+  }
+
+  function closeNav(main, sidenav) {
+    $(sidenav).css('width', '0px');
+    $(main).removeClass('overlay');
+  }
+
+};

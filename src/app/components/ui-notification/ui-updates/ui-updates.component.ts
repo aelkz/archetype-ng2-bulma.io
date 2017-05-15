@@ -9,24 +9,25 @@ import { FormControl } from '@angular/forms';
 // |--------------------------------------------------|
 // | Componente para inclusão de grupos               |
 // \--------------------------------------------------/
-declare var uiNavbarObject: any;
+declare var uiUpdatesObject: any;
 
 @Component({
-  selector: 'app-ui-navbar',
-  templateUrl: 'ui-navbar.component.html',
-  styleUrls: ['ui-navbar.component.scss']
+  selector: 'app-ui-updates',
+  templateUrl: 'ui-updates.component.html',
+  styles: [` 
+  `]
 })
-export class UiNavbarComponent implements OnInit {
+export class UiUpdatesComponent implements OnInit {
 
   constructor() {
-    console.log('navbar constructor initialized');
+    console.log('notification.updates constructor initialized');
   }
 
   init() {
-    uiNavbarObject.init();
+    // uiUpdatesObject.init();
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.init();
   }
 

@@ -11,6 +11,7 @@ import { AboutModule } from '../about/about.module';
 import { UiNavbarComponent } from '../ui-navbar/ui-navbar.component';
 import { UiUserInfoComponent } from '../ui-userinfo/ui-userinfo.component';
 import { UiFooterComponent } from '../ui-footer/ui-footer.component';
+import { UiNotificationModule } from '../ui-notification/ui-notification.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { UiFooterComponent } from '../ui-footer/ui-footer.component';
     MessageModule,
     GrupoModule,
     PerfilModule,
-    AboutModule
+    AboutModule,
+    UiNotificationModule
   ],
   exports: [UiNavbarComponent, UiUserInfoComponent, UiFooterComponent],
   declarations: [HomeComponent, UiNavbarComponent, UiUserInfoComponent, UiFooterComponent]

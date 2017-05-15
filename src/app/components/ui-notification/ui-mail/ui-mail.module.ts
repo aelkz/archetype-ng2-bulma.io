@@ -9,17 +9,15 @@ import { RouterModule } from '@angular/router';
 // /-------------------------------------------------\
 // | Componentes do módulo/projeto                   |
 // \-------------------------------------------------/
-import { UiNavbarComponent } from './ui-navbar.component';
-
-import { UiNotificationModule } from './../ui-notification/ui-notification.module';
+import { UiMailComponent } from './ui-mail.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule,
-    UiNotificationModule
+    FormsModule
   ],
-  declarations: [UiNavbarComponent]
+  declarations: [UiMailComponent],
+  exports: [UiMailComponent]
 })
-export class UiNavbarModule { }
+export class UiMailModule { }

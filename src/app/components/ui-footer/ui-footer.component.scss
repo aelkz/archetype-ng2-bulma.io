@@ -6,4 +6,22 @@
 .acessibilidade-flag{padding-top:18px}
 #versao{padding-top:24px;font-size:11px;font-weight:bold;}
 .rodape-info{position:absolute;font-size:11px;font-family:'Trebuchet MS';color:#707070;display:block;width:437px;margin-left:50%;left:-218.5px;top:26px}
-.app-footer {clear: both; position: relative; z-index: 0; height: 200px; margin-top: 2em; bottom: 0;}
+
+.app-footer {
+  clear: both; position: relative; z-index: 0; height: 200px; margin-top: 2em; bottom: 0;
+  -webkit-box-shadow: 0px -2px 5px -1px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px -2px 5px -1px rgba(0,0,0,0.6);
+  box-shadow: 0px -2px 5px -1px rgba(0,0,0,0.6);
+}
+
+.footer-icon {
+  border-color: transparent;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.footer-icon:hover {
+  border-color: transparent;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
