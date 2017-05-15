@@ -4,6 +4,11 @@
     <a class="nav-item is-brand" href="#">
       <img src="assets/images/bulma-logo.png" alt="Bulma logo">
     </a>
+    <a id="menu" class="nav-item is-tab is-hidden-mobile">
+      <span class="icon">
+          <i class="fa fa-bars"></i>
+      </span>
+    </a>
   </div>
 
   <div class="nav-center is-hidden-mobile">
@@ -12,7 +17,7 @@
     <app-ui-calendar></app-ui-calendar>
   </div>
 
-  <span id="nav-toggle" class="nav-toggle">
+  <span id="nav-toggle" class="nav-toggle is-hidden-desktop">
     <span></span>
     <span></span>
     <span></span>
@@ -42,6 +47,20 @@
         </a>
       </span>
     -->
+
+    <!-- notification info (mobile only) -->
+    <ul class="menu-list is-hidden-tablet">
+      <a class="nav-item" href="#">
+        Notifications <span class="tag is-danger is-small is-pulled-right">8</span>
+      </a>
+      <a class="nav-item" href="#">
+        Meetings <span class="tag is-success is-small is-pulled-right">4</span>
+      </a>
+      <a class="nav-item" href="#">
+        Messages <span class="tag is-warning is-small is-pulled-right">12</span>
+      </a>
+    </ul>
+
     <!-- call to user-info component -->
     <app-ui-userinfo></app-ui-userinfo>
   </div>
