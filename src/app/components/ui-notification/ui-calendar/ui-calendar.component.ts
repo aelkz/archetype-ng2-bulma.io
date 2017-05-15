@@ -13,9 +13,7 @@ declare var uiUpdatesObject: any;
 
 @Component({
   selector: 'app-ui-calendar',
-  templateUrl: 'ui-calendar.component.html',
-  styles: [` 
-  `]
+  templateUrl: 'ui-calendar.component.html'
 })
 export class UiCalendarComponent implements OnInit {
 

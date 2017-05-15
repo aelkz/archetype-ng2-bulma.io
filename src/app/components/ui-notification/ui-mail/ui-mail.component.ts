@@ -13,9 +13,7 @@ declare var uiMailObject: any;
 
 @Component({
   selector: 'app-ui-mail',
-  templateUrl: 'ui-mail.component.html',
-  styles: [` 
-  `]
+  templateUrl: 'ui-mail.component.html'
 })
 export class UiMailComponent implements OnInit {
 

@@ -5,25 +5,17 @@
     -moz-box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.5);
     box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.5);
   }
-
   .nav-center {
     min-height: 52px;
   }
-
   a.nav-item:hover {
     border-top: 1px solid transparent;
     border-bottom: 1px solid #00d1b2;
   }
-
-  /** ################################################## */
-  /** nav-item */
-  /** ################################################## */
-
   .nav-item {
     position: relative;
     min-width: 50px;
   }
-
   .nav-item .label {
     position: absolute;
     top: 34px;
@@ -34,42 +26,36 @@
     line-height: 0.9;
     border-radius: 4px;
   }
-
   .nav-item .divider-text {
     text-align: left;
     font-size: 10px;
     text-decoration: none;
   }
-
   .nav-item a.divider-text:hover {
     background-color: #fafafa;
   }
-
   .nav-item a, a.nav-item {
     color: #363636;
   }
-
   .nav.is-fixed-top {
     position: fixed;
     left: 0;
     right: 0;
     z-index: 1030;
-    top: 0; }
-
+    top: 0;
+  }
   .container > .nav > .nav-left > .nav-item:first-child:not(.is-tab), .nav > .container > .nav-left > .nav-item:first-child:not(.is-tab) {
-    padding-left: 20px; }
-
+    padding-left: 20px;
+  }
   .is-brand {
     padding: 20px;
     letter-spacing: 2px;
   }
-
   .dropdown {
     align-items: center;
     padding: 10px;
     height: 52px;
   }
-
   .dropdown-content {
     top: 50px;
     right: 0;
@@ -81,58 +67,46 @@
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
   }
-
   .dropdown-content a {
     color: #7a7a7a;
     padding: 10px 16px;
     text-decoration: none;
     display: block;
   }
-
   .dropdown-content a:hover {
     background-color: whitesmoke;
   }
-
   .dropdown:hover {
     background-color: #00d1b2;
     border-top: 1px solid transparent;
   }
-
   .dropdown:hover .dropdown-content {
     display: block;
   }
-
   .nav-item .divider-text {
     text-align: left;
     font-size: 10px;
     text-decoration: none;
   }
-
   .nav-item a.divider-text:hover {
     background-color: #fafafa;
   }
-
-  /* ################################################################## **/
-
-  meeting { text-align: left; }
-
+  meeting {
+    text-align: left;
+  }
   .label-success {
     background-color: #23d160;
     color: white;
   }
-
   .label-warning {
     background-color: #ffdd57;
     color: black;
   }
-
   .label-danger {
     background-color: #ff3860;
     color: white;
   }
-
   .icon {
     vertical-align: middle !important;
   }
-
 }
