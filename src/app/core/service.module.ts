@@ -4,6 +4,7 @@ import { ModuleWithProviders } from '@angular/core';
 
 import { GrupoService } from '../components/grupo/grupo.service';
 import { PerfilService } from '../components/perfil/perfil.service';
+import {UsuarioService} from '../components/usuario/usuario.service';
 
 /**
  * Modulo responsável por prover os serviços de integração a 'Web Api'.
@@ -22,8 +23,7 @@ export class ServiceModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: ServiceModule,
-      providers: [GrupoService,
-        PerfilService]
+      providers: [GrupoService, PerfilService, UsuarioService]
     };
   }
 }

@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
 // /-------------------------------------------------\
 // | Componentes compartilhados do projeto           |
 // \-------------------------------------------------/
-import { Animations } from './../../core/animations/animations';
+import { Animations } from '../animations/animations';
 
 // /--------------------------------------------------\
 // | form-grupo.component.ts                          |

@@ -11,6 +11,7 @@ import { Animations } from './../../core/animations/animations';
 // /-------------------------------------------------\
 // | Componentes do módulo/projeto                   |
 // \-------------------------------------------------/
+import { UsuarioService } from '../usuario/usuario.service';
 
 /**
  * Component responsável pela 'Listagem' de 'Usuario'.
@@ -21,18 +22,24 @@ import { Animations } from './../../core/animations/animations';
   animations: [ Animations.showHide ]
 })
 export class ListUsuarioComponent implements OnInit {
+  public usuarios: any[];
+
   private collapsed: boolean;
+  private usuarioService: UsuarioService;
 
   @Input() appDataTable: any;
 
-  constructor() {
+  constructor(usuarioService: UsuarioService) {
+    this.usuarioService = usuarioService;
     this.collapsed = true;
   }
 
   /**
    * Inicializa as dependências do Component.
    */
-  ngOnInit() { }
+  ngOnInit() {
+    this.usuarios = this.usuarioService.getUsuarios();
+  }
 
   public isCollapsed(): boolean {
     return this.collapsed;

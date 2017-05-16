@@ -10,11 +10,11 @@ import { PerfilModule } from '../perfil/perfil.module';
 import { AboutModule } from '../about/about.module';
 import { UsuarioModule } from '../usuario/usuario.module';
 
-import { UiNavbarComponent } from '../ui-navbar/ui-navbar.component';
-import { UiUserInfoComponent } from '../ui-userinfo/ui-userinfo.component';
-import { UiFooterComponent } from '../ui-footer/ui-footer.component';
-import { UiNotificationModule } from '../ui-notification/ui-notification.module';
-import { UiSidenavComponent } from '../ui-sidenav/ui-sidenav.component';
+import { UiNavbarComponent } from '../../core/ui-navbar/ui-navbar.component';
+import { UiUserInfoComponent } from '../../core/ui-userinfo/ui-userinfo.component';
+import { UiFooterComponent } from '../../core/ui-footer/ui-footer.component';
+import { UiNotificationModule } from '../../core/ui-notification/ui-notification.module';
+import { UiSidenavComponent } from '../../core/ui-sidenav/ui-sidenav.component';
 
 @NgModule({
   imports: [
