@@ -1,4 +1,4 @@
-import { trigger, state, transition, animate, style } from '@angular/core';
+import {trigger, state, transition, animate, style, keyframes} from '@angular/core';
 
 export class Animations {
   //'-webkit-transform','-moz-transform','-o-transform','-ms-transform','transform'
@@ -90,20 +90,19 @@ export class Animations {
   // | transition -> pop scale and bounce                         |
   // \------------------------------------------------------------/
   public static showPopScale = trigger('showPopScale', [
-    state('false', style({opacity: 0.8, transform: 'translateY(100%) scale(0)'})),
-    state('true', style({opacity: 1, transform: 'translateY(0) scale(1)'})),
-    transition('1 => 0', [
-      style({
-        opacity: 0.8,
-        transform: 'scale(1.1)'
-      }),
-      animate('0.2s ease-in')
-    ]),
+    state('false', style({opacity: 0.8, display: 'none'})),
+    state('true', style({opacity: 1, display: 'block'})),
     transition('0 => 1', [
-      animate('0.2s 10 ease-out', style({
-        opacity: 0,
-        transform: 'scale(0.25)'
-      }))
+      style({ transform: 'scale3d(.3, .3, .3)' }),
+      animate(100)
+    ]),
+    transition('1 => 0', [
+      animate(300, keyframes([
+        style({opacity: 0.8, transform: 'translateX(-10px)'}),
+        style({opacity: 0.8, transform: 'translateX(+20px)'}),
+        style({opacity: 1, transform: 'scale(1.2)'}),
+        style({transform: 'scale3d(.0, .0, .0)'}),
+      ]))
     ])
   ]);
 

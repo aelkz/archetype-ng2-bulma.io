@@ -1,4 +1,10 @@
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 1920px) {
+  .app-canvas {
+    margin:0 auto;
+    min-height:570px;
+  }
+}
+@media screen and (max-width: 769px) {
   .app-canvas {
     margin:0 auto;
     min-height:465px;
@@ -7,6 +13,18 @@
 @media screen and (max-width: 414px) {
   .app-canvas {
     margin:0 auto;
+    min-height:345px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .app-canvas {
+    margin:0 auto;
     min-height:275px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .app-canvas {
+    margin:0 auto;
+    min-height:178px;
   }
 }
