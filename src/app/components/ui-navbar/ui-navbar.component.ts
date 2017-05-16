@@ -19,7 +19,7 @@ declare var uiNavbarObject: any;
 export class UiNavbarComponent implements OnInit {
 
   constructor() {
-    console.log('navbar constructor initialized');
+    console.log('ui-navbar.component.ts constructor initialized');
   }
 
   init() {

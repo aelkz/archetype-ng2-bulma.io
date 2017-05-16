@@ -18,7 +18,7 @@ declare var uiMailObject: any;
 export class UiMailComponent implements OnInit {
 
   constructor() {
-    console.log('notification.updates constructor initialized');
+    console.log('notification.mail constructor initialized');
   }
 
   init() {

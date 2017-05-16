@@ -10,12 +10,12 @@ declare var $: any;
   selector: `[appDataTable]`,
 })
 export class UiDatatableDirective implements AfterViewInit, OnInit {
-  @HostListener('mouseenter') onMouseEnter() {
-    console.log('zzz');
-  }
+  // @HostListener('mouseenter') onMouseEnter() {
+  //  console.log('zzz');
+  // }
 
   public constructor(private el: ElementRef, private renderer: Renderer, private _ngZone: NgZone) {
-    console.log('appDataTable.directive initialized');
+    console.log('datatable.directive.ts initialized');
   }
 
   ngOnInit() {
@@ -25,16 +25,18 @@ export class UiDatatableDirective implements AfterViewInit, OnInit {
   public ngAfterViewInit(): void {
     console.log('yyy');
 
+    // acquire the DOM element id
+    const id = this.el.nativeElement.id;
+
     this._ngZone.runOutsideAngular(() => {
-      $('#fullfeatures').DataTable({
+      $('#' + id).DataTable({
         'drawCallback': function( settings ) {
-          if (!$('#fullfeatures').parent().hasClass('table-is-responsive')) {
-            $('#fullfeatures').wrap('<div class="table-is-responsive"></div>');
+          if (!$('#' + id).parent().hasClass('table-is-responsive')) {
+            $('#' + id).wrap('<div class="table-is-responsive"></div>');
           }
         }
       });
 
-      // $(this.elRef.nativeElement).OurPluginName({});
     });
   }
 

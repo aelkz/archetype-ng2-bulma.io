@@ -18,7 +18,7 @@ declare var uiUpdatesObject: any;
 export class UiCalendarComponent implements OnInit {
 
   constructor() {
-    console.log('notification.updates constructor initialized');
+    console.log('notification.calendar constructor initialized');
   }
 
   init() {

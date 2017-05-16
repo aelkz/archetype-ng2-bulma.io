@@ -6,10 +6,10 @@ if (typeof jQuery === "undefined") {
 }
 
 var uiNavbarObject = (function() {
-  console.log('ui-calendar.component.ts initialization');
+  console.log('ui-calendar.component.ts jquery initialization.');
   return {
     init: function() {
-      console.log('ui-calendar.component.ts:init() called.');
+      console.log('ui-calendar.component.ts:init() jquery called.');
 
       var $toggle = $('#nav-toggle');
       var $menu = $('#nav-menu');
@@ -65,19 +65,19 @@ var uiNavbarObject = (function() {
 })(uiNavbarObject||{})
 
 var uiUserInfoObject = (function() {
-  console.log('ui-userinfo.component.ts initialization');
+  console.log('ui-userinfo.component.ts jquery initialization.');
   return {
     init: function() {
-      console.log('ui-userinfo.component.ts:init() called.');
+      console.log('ui-userinfo.component.ts:init() jquery called.');
     }
   }
 })(uiUserInfoObject||{})
 
 var uiFooterObject = (function() {
-  console.log('ui-footer.component.ts initialization');
+  console.log('ui-footer.component.ts jquery initialization.');
   return {
     init: function() {
-      console.log('ui-footer.component.ts:init() called.');
+      console.log('ui-footer.component.ts:init() jquery called.');
     }
   }
 })(uiFooterObject||{})
@@ -93,10 +93,6 @@ $( document ).ready(function() {
 // /-------------------------------------------\
 // | is-awesome github project functions       |
 // \-------------------------------------------/
-if (typeof jQuery === "undefined") {
-  throw new Error("is-awesome requires jQuery");
-}
-
 $(function () {
   "use strict";
 
@@ -140,8 +136,8 @@ $.IsAwesome.options = {
 
 };
 
-
 function _init() {
+  console.log('is-awesome.init() jquery called.');
 
   var $vlibras = $('#brasil-vlibras');
   $vlibras.css('display', 'none');
