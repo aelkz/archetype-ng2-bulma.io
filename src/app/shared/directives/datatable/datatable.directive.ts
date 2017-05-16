@@ -30,7 +30,7 @@ export class UiDatatableDirective implements AfterViewInit, OnInit {
 
     this._ngZone.runOutsideAngular(() => {
       $('#' + id).DataTable({
-        'drawCallback': function( settings ) {
+        'drawCallback': function (settings) {
           if (!$('#' + id).parent().hasClass('table-is-responsive')) {
             $('#' + id).wrap('<div class="table-is-responsive"></div>');
           }
@@ -38,6 +38,23 @@ export class UiDatatableDirective implements AfterViewInit, OnInit {
       });
 
     });
+
+    // /-----------------------------\
+    // | custom DataTable parameters |
+    // \-----------------------------/
+    // $('#nofeatures').DataTable({
+    //   "paging": true,
+    //   "lengthChange": false,
+    //   "searching": false,
+    //   "ordering": true,
+    //   "info": true,
+    //   "autoWidth": false,
+    //   "drawCallback": function( settings ) {
+    //     if(!$("#nofeatures").parent().hasClass("table-is-responsive")){
+    //       $("#nofeatures").wrap('<div class="table-is-responsive"></div>');
+    //     }
+    //   }
+    // });
   }
 
 }
