@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { GrupoRoutes } from '../../components/grupo/grupo.router';
 import { PerfilRoutes } from '../perfil/perfil.router';
 import { AboutRoutes } from '../about/about.router';
+import { UsuarioRoutes } from '../usuario/usuario.router';
 
 /**
  * Configuração de 'Rotas' do modulo 'Home'.
@@ -14,7 +15,8 @@ export const HomeRoutes: Routes = [{
       children: [
           ...GrupoRoutes,
           ...PerfilRoutes,
-          ...AboutRoutes
+          ...AboutRoutes,
+          ...UsuarioRoutes
     ]
   }
 ];

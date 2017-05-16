@@ -20,6 +20,8 @@ import { ValidationResourceProvider } from './shared/validation/validation.resou
 // \-------------------------------------------------/
 import { HomeModule } from './components/home/home.module';
 import { AcessoModule } from './core/acesso/acesso.module';
+import { SharedModule } from './shared/shared.module';
+
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.router';
 
@@ -35,6 +37,7 @@ import { AppRouting } from './app.router';
   imports: [
     ServiceModule.forRoot(),
     MessageModule.forRoot(),
+    SharedModule,
     ValidationModule,
     HomeModule,
     AcessoModule,
