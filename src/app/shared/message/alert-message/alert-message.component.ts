@@ -18,7 +18,17 @@ import { MessageService, MessageItem } from '../message.service';
         '-ms-transform': 'translate3d(0px, -100%, 0px)',
         'transform': 'translate3d(0px, -100%, 0px)'
       })),
-      transition('* => *', animate('800ms ease-in-out'))
+      transition('* => *', animate('600ms ease-in-out'))
+    ]),
+    trigger('slideOutIn', [
+      state('void', style({
+        '-webkit-transform': 'translate3d(0px, 100%, 0px)',
+        '-moz-transform': 'translate3d(0px, 100%, 0px)',
+        '-o-transform': 'translate3d(0px, 100%, 0px)',
+        '-ms-transform': 'translate3d(0px, 100%, 0px)',
+        'transform': 'translate3d(0px, 100%, 0px)'
+      })),
+      transition('* => *', animate('100ms ease-in-out'))
     ])
   ]
 })

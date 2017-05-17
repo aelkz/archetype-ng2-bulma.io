@@ -388,3 +388,14 @@ div.mydp > div > input:focus {
 div.mydp > div {
   background: #00D1B2;
 }
+div.selbtngroup {
+  height: 32px;
+}
+div.selbtngroup > button.btnpicker {
+  background-color: #ffffff;
+  border-left: 1px solid #DBDBDB;
+}
+div.selbtngroup > button.btnclear {
+  background-color: #ffffff;
+  border-left: 1px solid #DBDBDB;
+}

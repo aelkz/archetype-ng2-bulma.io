@@ -1,6 +1,9 @@
-<div class="alert-message">
-    <div [@slideInOut]="" *ngFor="let item of items" class="alert {{item.type}}" role="alert">
-        <button type="button" class="close" aria-label="Close" (click)="removeMsg(item)"><span aria-hidden="true">×</span></button>
-        <span>{{item.msg}}</span>
-    </div>
-</div>
+<article class="message is-info is-pulled-right right-align" [@slideOutIn]="" *ngFor="let item of items" role="alert" style="position: absolute; z-index: 1; bottom: 0px;">
+  <div class="message-header">
+    <p>Aviso</p>
+    <button class="delete" [@slideInOut]="" (click)="removeMsg(item)"></button>
+  </div>
+  <div class="message-body">
+    {{item.msg}}
+  </div>
+</article>
