@@ -21,35 +21,36 @@
       <div class="field is-horizontal">
 
         <div class="container">
-                <table appDataTable id="users-table" class="table is-striped is-bordered dataTable" cellspacing="0" width="100%">
-                  <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Company</th>
-                    <th>Office</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                  </tr>
-                  </thead>
-                  <tfoot>
-                  <tr>
-                    <th>Name</th>
-                    <th>Company</th>
-                    <th>Office</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                  </tr>
-                  </tfoot>
-                  <tbody>
-                  <tr class="odd" *ngFor="let usuario of usuarios">
-                    <td>{{usuario.name}}</td>
-                    <td>{{usuario.company}}</td>
-                    <td>{{usuario.office}}</td>
-                    <td>{{usuario.startDate}}</td>
-                    <td>{{usuario.salary}}</td>
-                  </tr>
-                  </tbody>
-                </table>
+          <table appDataTable id="users-table" class="table is-striped is-bordered dataTable" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Office</th>
+              <th>Start date</th>
+              <th>Salary</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Office</th>
+              <th>Start date</th>
+              <th>Salary</th>
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr class="odd" *ngFor="let usuario of usuarios">
+              <td>{{usuario.name}}</td>
+              <td>{{usuario.company}}</td>
+              <td>{{usuario.office}}</td>
+              <td>{{usuario.startDate}}</td>
+              <td>{{usuario.salary}}</td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="datatable-pagination-mobile"></div>
         </div>
 
       </div>

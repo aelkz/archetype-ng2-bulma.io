@@ -1,4 +1,16 @@
 @charset "UTF-8";
+/** ************************************************* */
+/** Mobile                                            */
+/** ************************************************* */
+/** hack: increases vertical height for mobile */
+@media screen and (max-width: 414px) {
+  div.datatable-pagination-mobile {
+    min-height: 80px;
+  }
+}
+/** ************************************************* */
+/** Desktop                                           */
+/** ************************************************* */
 @media screen and (min-width: 769px) {
   nav {
     -webkit-box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.5);
@@ -109,9 +121,11 @@
   .icon {
     vertical-align: middle !important;
   }
-}
+} /** END: @media screen and (min-width: 769px) */
 
-/** DATATABLE */
+/** ************************************************* */
+/** Bulma.DataTable Component                         */
+/** ************************************************* */
 table.is-inverse {
   background-color: whitesmoke;
 }
@@ -339,7 +353,7 @@ ul.pagination {
   margin: 0;
   padding: 0;
   font-size: 0;
-  float: left;
+  float: right;
   list-style-type: none;
   -webkit-padding-start: 0;
 }
@@ -354,4 +368,14 @@ ul.pagination > li {
 }
 div.table-is-responsive {
   overflow-x: auto;
+}
+div.field > div.container {
+  min-width: 100%;
+  margin: 0;
+  /* border: 1px solid red; */
+}
+div.dataTables_wrapper {
+  min-width: 100%;
+  margin: 0;
+  /* border: 1px solid blue; */
 }

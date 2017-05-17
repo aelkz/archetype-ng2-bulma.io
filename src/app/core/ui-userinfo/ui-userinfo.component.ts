@@ -14,7 +14,6 @@ import { Animations } from '../animations/animations';
 // |--------------------------------------------------|
 // | Componente para inclusão de grupos               |
 // \--------------------------------------------------/
-declare var uiUserInfoObject: any;
 
 @Component({
   selector: 'app-ui-userinfo',
@@ -42,12 +41,8 @@ export class UiUserInfoComponent implements OnInit {
     this.collapsed = !this.collapsed;
   }
 
-  init() {
-    uiUserInfoObject.init();
-  }
+  init() { }
 
-  ngOnInit(){
-    this.init();
-  }
+  ngOnInit(){ }
 
 }

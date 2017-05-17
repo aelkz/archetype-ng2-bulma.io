@@ -1,7 +1,4 @@
-import {
-  Directive, HostListener, Input, ElementRef, NgZone, TemplateRef, ViewContainerRef,
-  Renderer
-} from '@angular/core';
+import { Directive, ElementRef, NgZone, Renderer } from '@angular/core';
 import { OnInit, AfterViewInit } from '@angular/core';
 
 declare var $: any;

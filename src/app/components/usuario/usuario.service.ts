@@ -87,7 +87,7 @@ export class UsuarioService {
         'company': 'Vivamus Nibh Institute',
         'office': 'Kamarhati',
         'startDate': 'December 31st, 2003',
-        'salary': '$077,759.87'
+        'salary': '$77,759.87'
       },
       {
         'name': 'Donna',
@@ -514,7 +514,7 @@ export class UsuarioService {
   }
 
   /**
-   * Retorna o array de 'perfis'.
+   * Retorna o array de 'usuarios'.
    *
    * @returns any[]
    */
@@ -523,7 +523,7 @@ export class UsuarioService {
   }
 
   /**
-   * Retorna a instância de 'Perfil'.
+   * Retorna a instância de 'Usuario'.
    */
   public getUsuario(id: any): any {
     // TODO - verificar predicado de comparação com ===

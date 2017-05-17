@@ -9,7 +9,6 @@ import { FormControl } from '@angular/forms';
 // |--------------------------------------------------|
 // | Componente para inclusão de grupos               |
 // \--------------------------------------------------/
-declare var uiFooterObject: any;
 
 @Component({
   selector: 'app-ui-footer',
@@ -22,12 +21,8 @@ export class UiFooterComponent implements OnInit {
     console.log('footer constructor initialized');
   }
 
-  init() {
-    uiFooterObject.init();
-  }
+  init() { }
 
-  ngOnInit(){
-    this.init();
-  }
+  ngOnInit(){ }
 
 }

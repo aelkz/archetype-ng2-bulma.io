@@ -19,42 +19,41 @@
   <div class="card-content" [@showHide]="isCollapsed()">
     <div class="content">
       <div class="field is-horizontal">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>{{'LABEL_NOME' | i18n}}</th>
-              <th>{{'LABEL_DESCRICAO' | i18n}}</th>
-              <th>{{'LABEL_SITUACAO' | i18n}}</th>
-              <th>{{'LABEL_ACAO' | i18n}}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="odd" *ngFor="let perfil of perfis">
-              <td class="text-left">{{perfil.nome}}</td>
-              <td class="text-left">{{perfil.descricao}}</td>
-              <td class="text-center">{{perfil.situacao.descricao}}</td>
-              <td class="text-center">
-                <button type="button" class="button" title="{{'LABEL_VISUALIZAR' | i18n}}" [routerLink]="['/perfil/', perfil.id, 'visualizar']">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
+          <table class="table is-narrow">
+            <thead>
+              <tr>
+                <th>{{'LABEL_NOME' | i18n}}</th>
+                <th>{{'LABEL_DESCRICAO' | i18n}}</th>
+                <th>{{'LABEL_SITUACAO' | i18n}}</th>
+                <th>{{'LABEL_ACAO' | i18n}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="odd" *ngFor="let perfil of perfis">
+                <td class="text-left">{{perfil.nome}}</td>
+                <td class="text-left">{{perfil.descricao}}</td>
+                <td class="text-center">{{perfil.situacao.descricao}}</td>
+                <td class="text-center">
+                  <button type="button" class="button" title="{{'LABEL_VISUALIZAR' | i18n}}" [routerLink]="['/perfil/', perfil.id, 'visualizar']">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
 
-                <button type="button" class="button is-info" title="{{'LABEL_ALTERAR' | i18n}}" [routerLink]="['/perfil/', perfil.id, 'alterar']">
-                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                </button>
+                  <button type="button" class="button is-info" title="{{'LABEL_ALTERAR' | i18n}}" [routerLink]="['/perfil/', perfil.id, 'alterar']">
+                      <i class="fa fa-pencil" aria-hidden="true"></i>
+                  </button>
 
-                <button type="button" class="button is-success" title="{{'LABEL_ATIVAR' | i18n}}" (click)="ativar(perfil)" *ngIf="isInativo(perfil)">
-                    <i class="fa fa-power-off" aria-hidden="true"></i>
-                </button>
+                  <button type="button" class="button is-success" title="{{'LABEL_ATIVAR' | i18n}}" (click)="ativar(perfil)" *ngIf="isInativo(perfil)">
+                      <i class="fa fa-power-off" aria-hidden="true"></i>
+                  </button>
 
-                <button type="button" class="button is-danger" title="{{'LABEL_INATIVAR' | i18n}}" (click)="inativar(perfil)" *ngIf="isAtivo(perfil)">
-                    <i class="fa fa-power-off" aria-hidden="true"></i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                  <button type="button" class="button is-danger" title="{{'LABEL_INATIVAR' | i18n}}" (click)="inativar(perfil)" *ngIf="isAtivo(perfil)">
+                      <i class="fa fa-power-off" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
       </div>
-
     </div>
   </div>
   <footer class="card-footer" style="background-color: #ECECEC">
