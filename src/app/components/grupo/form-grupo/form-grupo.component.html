@@ -100,6 +100,8 @@
                   </div>
                   <div class="field">
                     <p class="control is-expanded">
+                      <my-date-picker id="inputData" [options]="myDatePickerOptions" [(ngModel)]="grupo.data" #grupoData="ngModel" name="data" [ngModelOptions]="{standalone: true}" required></my-date-picker>
+                      <validation-message [for]="grupoData" [form]="formGrupo"></validation-message>
                     </p>
                   </div>
                 </div>
