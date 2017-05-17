@@ -379,3 +379,12 @@ div.dataTables_wrapper {
   margin: 0;
   /* border: 1px solid blue; */
 }
+div.mydp {
+  max-width: 150px;
+}
+div.mydp > div > input:focus {
+  border: 1px solid #00D1B2;
+}
+div.mydp > div {
+  background: #00D1B2;
+}

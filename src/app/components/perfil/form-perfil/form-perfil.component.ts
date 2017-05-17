@@ -22,21 +22,7 @@ import { PerfilService } from '../perfil.service';
 @Component({
   selector: 'app-form-perfil',
   templateUrl: './form-perfil.component.html',
-  styles: [`
-    .under {
-      position: relative;
-      top: 2px;
-    }
-    .right-align {
-      width: 100%; 
-      text-align: right; 
-      float: right; 
-      margin: 10px;
-    }
-    .full-width {
-      width: 100%;
-    }
-  `]
+  styleUrls: ['form-perfil.component.scss']
 })
 export class FormPerfilComponent {
   private messageService: MessageService;
@@ -45,7 +31,7 @@ export class FormPerfilComponent {
 
   public acao: AcaoSistema;
   public perfil: any = {};
-  public toggleShowHide:boolean = true;  
+  public toggleShowHide:boolean = true;
 
   /** array da lista de funcionalidades **/
   public funcionalidades: any = {};

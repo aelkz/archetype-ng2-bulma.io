@@ -84,7 +84,7 @@
         </div>
         <div class="field">
           <p class="control is-expanded">
-            <textarea id="txtDescricao" class="textarea" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="grupo.descricao" #grupoDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
+            <textarea id="inputDescricao" class="textarea" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="grupo.descricao" #grupoDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
             <validation-message [for]="grupoDescricao" [form]="formGrupo"></validation-message>
           </p>
         </div>
@@ -100,8 +100,6 @@
                   </div>
                   <div class="field">
                     <p class="control is-expanded">
-                       <input id="inputData" type="text" class="input" title="{{'LABEL_DATA' | i18n}}" [(ngModel)]="grupo.data" #grupoData="ngModel" name="data" required maxlength="50" [disabled]="acao.isAcaoVisualizar()">
-                       <validation-message [for]="grupoData" [form]="formGrupo"></validation-message>
                     </p>
                   </div>
                 </div>
