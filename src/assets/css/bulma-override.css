@@ -379,7 +379,7 @@ div.dataTables_wrapper {
   margin: 0;
   /* border: 1px solid blue; */
 }
-div.mydp {
+div.datepicker {
   max-width: 150px;
 }
 div.mydp > div > input:focus {
@@ -398,4 +398,23 @@ div.selbtngroup > button.btnpicker {
 div.selbtngroup > button.btnclear {
   background-color: #ffffff;
   border-left: 1px solid #DBDBDB;
+}
+div.datevalue {
+  color: #000;
+  font-size: 11px;
+  font-family: "Courier New";
+}
+span.currday {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+}
+td.daycell:hover{
+  -moz-border-radius-topleft: 15px;
+  -moz-border-radius-topright: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-radius: 15px 15px 15px 15px;
+  border-radius: 15px 15px 15px 15px;
+  background-color: #000;
 }
