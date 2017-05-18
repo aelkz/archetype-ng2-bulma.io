@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 // \-------------------------------------------------/
 import { MessageModule } from '../../shared/message/message.module';
 import { ValidationModule } from '../../shared/validation/validation.module';
+import { SharedModule } from '../../shared/shared.module';
 
 // /-------------------------------------------------\
 // | Componentes do módulo/projeto                   |
@@ -27,7 +28,8 @@ import { FormPerfilComponent } from './form-perfil/form-perfil.component';
     RouterModule,
     FormsModule,
     MessageModule,
-    ValidationModule
+    ValidationModule,
+    SharedModule
   ],
   declarations: [ListPerfilComponent, FormPerfilComponent]
 })

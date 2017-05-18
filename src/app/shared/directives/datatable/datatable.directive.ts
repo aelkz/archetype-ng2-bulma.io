@@ -4,7 +4,7 @@ import { OnInit, AfterViewInit } from '@angular/core';
 declare var $: any;
 
 @Directive({
-  selector: `[appDataTable]`,
+  selector: `[app-data-table]`,
 })
 export class UiDatatableDirective implements AfterViewInit, OnInit {
   // @HostListener('mouseenter') onMouseEnter() {
