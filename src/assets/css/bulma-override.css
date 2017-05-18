@@ -418,3 +418,31 @@ td.daycell:hover{
   border-radius: 15px 15px 15px 15px;
   background-color: #000;
 }
+button.btnpicker:before,
+button.btnpicker:after {
+  position: absolute;
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition:
+    opacity 0.4s ease-in-out,
+    visibility 0.4s ease-in-out,
+    -webkit-transform 0.4s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -moz-transition:
+    opacity 0.4s ease-in-out,
+    visibility 0.4s ease-in-out,
+    -moz-transform 0.4s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition:
+    opacity 0.4s ease-in-out,
+    visibility 0.4s ease-in-out,
+    transform 0.4s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform:    translate3d(0, 0, 0);
+  transform:         translate3d(0, 0, 0);
+  pointer-events: none;
+}
+table.caltable {
+  position: relative;
+  top: -15px;
+}
