@@ -1,9 +1,4 @@
-<article class="message is-info is-pulled-right right-align" [@slideOutIn]="" *ngFor="let item of items" role="alert" style="position: absolute; z-index: 1; bottom: 0px;">
-  <div class="message-header">
-    <p>Aviso</p>
-    <button class="delete" [@slideInOut]="" (click)="removeMsg(item)"></button>
-  </div>
-  <div class="message-body">
-    {{item.msg}}
-  </div>
-</article>
+<div class="notification is-primary" [@slideLeftRight]="" *ngFor="let item of items" role="alert" style="position: absolute; right: 5px; z-index: 1; bottom: 0px; clear: both; min-width: 400px;">
+  <button class="delete" [@slideLeftRight]="" (click)="removeMsg(item)"></button>
+  {{item.msg}}
+</div>
