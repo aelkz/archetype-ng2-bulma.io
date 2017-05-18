@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { MessageModule } from '../../shared/message/message.module';
 import { ValidationModule } from '../../shared/validation/validation.module';
 import { MyDatePickerModule } from 'mydatepicker';
+import { SharedModule } from '../../shared/shared.module';
 
 // /-------------------------------------------------\
 // | Componentes do módulo/projeto                   |
@@ -29,7 +30,8 @@ import { ListGrupoComponent } from './list-grupo/list-grupo.component';
     FormsModule,
     MessageModule,
     ValidationModule,
-    MyDatePickerModule
+    MyDatePickerModule,
+    SharedModule
   ],
   declarations: [FormGrupoComponent, ListGrupoComponent]
 })

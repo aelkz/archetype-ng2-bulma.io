@@ -1,5 +1,8 @@
-/* Base styles for the element that has a tooltip */
+/** Base styles for the element that has a tooltip */
 [app-tooltip],
+[app-tooltip-bottom],
+[app-tooltip-left],
+[app-tooltip-right],
 .tooltip {
   position: relative;
   cursor: pointer;
@@ -8,6 +11,12 @@
 /* Base styles for the entire tooltip */
 [app-tooltip]:before,
 [app-tooltip]:after,
+[app-tooltip-bottom]:before,
+[app-tooltip-bottom]:after,
+[app-tooltip-left]:before,
+[app-tooltip-left]:after,
+[app-tooltip-right]:before,
+[app-tooltip-right]:after,
 .tooltip:before,
 .tooltip:after {
   position: absolute;
@@ -38,6 +47,18 @@
 [app-tooltip]:hover:after,
 [app-tooltip]:focus:before,
 [app-tooltip]:focus:after,
+[app-tooltip-bottom]:hover:before,
+[app-tooltip-bottom]:hover:after,
+[app-tooltip-bottom]:focus:before,
+[app-tooltip-bottom]:focus:after,
+[app-tooltip-left]:hover:before,
+[app-tooltip-left]:hover:after,
+[app-tooltip-left]:focus:before,
+[app-tooltip-left]:focus:after,
+[app-tooltip-right]:hover:before,
+[app-tooltip-right]:hover:after,
+[app-tooltip-right]:focus:before,
+[app-tooltip-right]:focus:after,
 .tooltip:hover:before,
 .tooltip:hover:after,
 .tooltip:focus:before,
@@ -50,7 +71,10 @@
 
 /* Base styles for the tooltip's directional arrow */
 .tooltip:before,
-[app-tooltip]:before {
+[app-tooltip]:before,
+[app-tooltip-bottom]:before,
+[app-tooltip-left]:before,
+[app-tooltip-right]:before{
   z-index: 1001;
   border: 6px solid transparent;
   background: transparent;
@@ -59,7 +83,7 @@
 
 /* Base styles for the tooltip's content area */
 .tooltip:after,
-[app-tooltip]:after {
+[app-tooltip]:after{
   z-index: 1000;
   padding: 8px;
   width: 160px;
@@ -67,6 +91,42 @@
   background-color: hsla(0, 0%, 20%, 0.9);
   color: #fff;
   content: attr(app-tooltip);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+[app-tooltip-bottom]:after{
+  z-index: 1000;
+  padding: 8px;
+  width: 160px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(app-tooltip-bottom);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+[app-tooltip-left]:after{
+  z-index: 1000;
+  padding: 8px;
+  width: 160px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(app-tooltip-left);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+[app-tooltip-right]:after{
+  z-index: 1000;
+  padding: 8px;
+  width: 160px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(app-tooltip-right);
   font-size: 14px;
   line-height: 1.2;
 }
@@ -194,7 +254,7 @@
 /* Move directional arrows down a bit for left/right tooltips */
 .tooltip-left:before,
 .tooltip-right:before {
-  top: 3px;
+  top: 10px;
 }
 
 /* Vertically center tooltip content for left/right tooltips */
