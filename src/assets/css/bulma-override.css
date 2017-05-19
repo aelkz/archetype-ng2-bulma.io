@@ -446,3 +446,15 @@ table.caltable {
   position: relative;
   top: -15px;
 }
+.input.ng-pristine.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.input.ng-touched.ng-dirty.ng-invalid {
+  border: 1px solid red;
+}
+.textarea.ng-pristine.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.textarea.ng-dirty.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
