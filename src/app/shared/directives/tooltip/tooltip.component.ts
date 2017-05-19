@@ -1,5 +1,7 @@
 import {Component, ViewEncapsulation, OnInit, AfterViewInit, ElementRef, Input, Renderer} from '@angular/core';
 
+// https://admin.vuebulma.com/#/components/tooltip
+
 @Component({
   selector: '[app-tooltip], [app-tooltip-bottom], [app-tooltip-left], [app-tooltip-right]', // Refer to it like an attribute directive
   templateUrl: './tooltip.component.html',
@@ -12,13 +14,6 @@ export class UiTooltipComponent implements OnInit, AfterViewInit {
   @Input('app-tooltip-left') _text_left;
   @Input('app-tooltip-right') _text_right;
 
-  /** tooltip position */
-/*
-  _isLeftPosition = false;
-  _isRightPosition = false;
-  _isBottomPosition = false;
-  _isTopPosition = false;
-*/
   _isLeftPosition = this._hasAttributeWithPrefix('left');
   _isRightPosition = this._hasAttributeWithPrefix('right');
   _isBottomPosition = this._hasAttributeWithPrefix('bottom');

@@ -1,12 +1,9 @@
-<div *ngFor="let item of items" style="position: absolute; z-index: 100; top: 100px;">
+<div *ngFor="let item of items" style="position: absolute; z-index: 100; top: 100px; width: 100%">
   <div *ngIf="item.isConfirmTypeOk()">
     <article class="message is-primary" [@slideInOut]="" role="info" >
-      <div class="message-header has-icon has-icons-left">
-        <p>
-          {{'LABEL_CONFIRM_TITLE' | i18n}}
-          <i class="fa fa-info-circle" aria-hidden="true"></i>
-        </p>
-        <button class="delete" [@slideInOut]="" (click)="removeMsg(item)"></button>
+      <div class="message-header">
+        <p>{{'LABEL_CONFIRM_TITLE' | i18n}}</p>
+        <button class="delete" [@slideInOut]="" (click)="confirmYesOk(item)"></button>
       </div>
       <div class="message-body">
         {{item.msg}}
@@ -18,12 +15,9 @@
   </div>
   <div *ngIf="item.isConfirmTypeYesNo()">
     <article class="message is-warning" [@slideInOut]="" role="alert" >
-      <div class="message-header  has-icon has-icons-left">
-        <p>
-          {{'LABEL_CONFIRM_TITLE' | i18n}}
-          <i class="fa fa-question-circle" aria-hidden="true"></i>
-        </p>
-        <button class="delete" [@slideInOut]="" (click)="removeMsg(item)"></button>
+      <div class="message-header">
+        <p>{{'LABEL_CONFIRM_TITLE' | i18n}}</p>
+        <button class="delete" [@slideInOut]="" (click)="confirmNo(item)"></button>
       </div>
       <div class="message-body">
         {{item.msg}}
