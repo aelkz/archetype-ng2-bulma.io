@@ -84,7 +84,7 @@
         </div>
         <div class="field">
           <p class="control is-expanded">
-            <textarea id="txtDescricao" class="textarea" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="grupo.descricao" #grupoDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
+            <textarea id="inputDescricao" class="textarea" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="grupo.descricao" #grupoDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
             <validation-message [for]="grupoDescricao" [form]="formGrupo"></validation-message>
           </p>
         </div>
@@ -93,15 +93,15 @@
           <div class="field-body">
             <div class="field is-grouped">
 
-                <div class="field">
+                <div class="field datepicker">
                   <div class="field-label is-normal" style="text-align: left;">
                     <label for="inputNome" class="required">{{'LABEL_DATA' | i18n}}:</label>
                     <br>
                   </div>
                   <div class="field">
                     <p class="control is-expanded">
-                       <input id="inputData" type="text" class="input" title="{{'LABEL_DATA' | i18n}}" [(ngModel)]="grupo.data" #grupoData="ngModel" name="data" required maxlength="50" [disabled]="acao.isAcaoVisualizar()">
-                       <validation-message [for]="grupoData" [form]="formGrupo"></validation-message>
+                      <my-date-picker id="inputData" [options]="myDatePickerOptions" [(ngModel)]="grupo.data" #grupoData="ngModel" name="data" [ngModelOptions]="{standalone: true}" required></my-date-picker>
+                      <validation-message [for]="grupoData" [form]="formGrupo"></validation-message>
                     </p>
                   </div>
                 </div>
@@ -140,14 +140,14 @@
       <div class="right-align">
 
         <div *ngIf="acao.isAcaoIncluir() || acao.isAcaoAlterar()">
-          <button type="button" class="button is-danger" title="{{'LABEL_CANCELAR' | i18n}}" [routerLink]="['/grupo/listar']">
+          <button app-tooltip-left="hello world!" type="button" class="button is-danger" title="{{'LABEL_CANCELAR' | i18n}}" [routerLink]="['/grupo/listar']">
             <span class="icon">
               <i class="fa fa-ban under" aria-hidden="true"></i>
             </span>
             <span>{{'LABEL_CANCELAR' | i18n}}</span>
           </button>
 
-          <button type="submit" class="button is-success" title="{{'LABEL_SALVAR' | i18n}}">
+          <button app-tooltip-right="hello world!" type="submit" class="button is-success" title="{{'LABEL_SALVAR' | i18n}}">
             <span class="icon">
               <i class="fa fa-plus under" aria-hidden="true"></i>
             </span>

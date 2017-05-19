@@ -10,6 +10,7 @@ import { FormControl } from '@angular/forms';
 // \-------------------------------------------------/
 import { MessageService } from '../../../shared/message/message.service';
 import { MessageResource, MessageResourceProvider } from './../../../shared/message/message.resource';
+import { IMyDpOptions } from 'mydatepicker';
 
 // /-------------------------------------------------\
 // | artefatos do módulo/projeto                     |
@@ -25,21 +26,7 @@ import { GrupoService } from '../grupo.service';
 @Component({
   selector: 'app-form-grupo',
   templateUrl: 'form-grupo.component.html',
-  styles: [`
-  .under {
-    position: relative;
-    top: 2px;
-  }
-  .right-align {
-    width: 100%; 
-    text-align: right; 
-    float: right; 
-    margin: 10px;
-  }
-  .full-width {
-    width: 100%;
-  }
-`]
+  styleUrls: ['form-grupo.component.scss']
 })
 export class FormGrupoComponent {
   private messageService: MessageService;
@@ -47,7 +34,18 @@ export class FormGrupoComponent {
   private messageResource: MessageResource;
   private router: Router;
 
-  public toggleShowHide:boolean = true;  
+  // https://github.com/kekeh/mydatepicker
+  private myDatePickerOptions: IMyDpOptions = {
+    dateFormat: 'dd/mm/yyyy',
+    sunHighlight: true,
+    markCurrentDay: true,
+    minYear: 1990,
+    maxYear: 2100,
+    showClearDateBtn: true,
+    showSelectorArrow: false
+  };
+
+  public toggleShowHide = true;
   public acao: AcaoSistema;
   public grupo: any = {};
 
@@ -65,7 +63,6 @@ export class FormGrupoComponent {
     this.acao = new AcaoSistema(route);
     this.messageService = messageService;
     this.messageResource = new MessageResource();
-
     this.inicializarGrupo(route.snapshot.params['id']);
   }
 

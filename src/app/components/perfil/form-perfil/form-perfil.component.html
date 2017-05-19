@@ -31,7 +31,7 @@
         </div>
         <div class="field">
           <p class="control is-expanded has-icons-left">
-             <input id="inputNome" type="text" class="input" title="{{'LABEL_NOME' | i18n}}" [(ngModel)]="perfil.nome" #perfilNome="ngModel" name="nome" required maxlength="50" [disabled]="acao.isAcaoVisualizar()">
+            <input id="inputNome" type="text" class="input" title="{{'LABEL_NOME' | i18n}}" [(ngModel)]="perfil.nome" #perfilNome="ngModel" name="nome" required maxlength="50" [disabled]="acao.isAcaoVisualizar()">
             <span class="icon is-small is-left">
               <i class="fa fa-user"></i>
             </span>
@@ -44,7 +44,7 @@
         </div>
         <div class="field">
           <p class="control is-expanded">
-            <textarea id="txtDescricao" class="textarea" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="perfil.descricao" #perfilDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
+            <textarea id="inputDescricao" class="textarea" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="perfil.descricao" #perfilDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
             <validation-message [for]="perfilDescricao" [form]="formPerfil"></validation-message>
           </p>
         </div>
@@ -92,14 +92,14 @@
       <div class="right-align">
 
         <div *ngIf="acao.isAcaoIncluir() || acao.isAcaoAlterar()">
-          <button type="button" class="button is-danger" title="{{'LABEL_CANCELAR' | i18n}}" [routerLink]="['/perfil/listar']">
+          <button app-tooltip="hello world!" type="button" class="button is-danger" title="{{'LABEL_CANCELAR' | i18n}}" [routerLink]="['/perfil/listar']" >
             <span class="icon">
               <i class="fa fa-ban under" aria-hidden="true"></i>
             </span>
             <span>{{'LABEL_CANCELAR' | i18n}}</span>
           </button>
 
-          <button type="submit" class="button is-success" title="{{'LABEL_SALVAR' | i18n}}">
+          <button app-tooltip-bottom="hello world!" type="submit" class="button is-success" title="{{'LABEL_SALVAR' | i18n}}">
             <span class="icon">
               <i class="fa fa-plus under" aria-hidden="true"></i>
             </span>

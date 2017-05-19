@@ -27,8 +27,6 @@ export class ListUsuarioComponent implements OnInit {
   private collapsed: boolean;
   private usuarioService: UsuarioService;
 
-  @Input() appDataTable: any;
-
   constructor(usuarioService: UsuarioService) {
     this.usuarioService = usuarioService;
     this.collapsed = true;

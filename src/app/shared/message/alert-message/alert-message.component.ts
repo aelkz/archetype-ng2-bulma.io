@@ -1,4 +1,4 @@
-import { Component, OnInit, trigger, transition, animate, state, style } from '@angular/core';
+import {Component, OnInit, trigger, transition, animate, state, style, keyframes} from '@angular/core';
 
 import { MessageService, MessageItem } from '../message.service';
 
@@ -10,15 +10,21 @@ import { MessageService, MessageItem } from '../message.service';
   templateUrl: 'alert-message.component.html',
   styleUrls: ['alert-message.component.scss'],
   animations: [
-    trigger('slideInOut', [
-      state('void', style({
-        '-webkit-transform': 'translate3d(0px, -100%, 0px)',
-        '-moz-transform': 'translate3d(0px, -100%, 0px)',
-        '-o-transform': 'translate3d(0px, -100%, 0px)',
-        '-ms-transform': 'translate3d(0px, -100%, 0px)',
-        'transform': 'translate3d(0px, -100%, 0px)'
-      })),
-      transition('* => *', animate('800ms ease-in-out'))
+    trigger('slideLeftRight', [
+      state('*', style({opacity: 1, display: 'block'})),
+      state('void', style({opacity: 0.8, display: 'none'})),
+      transition('void => *', [
+        style({ transform: 'scale3d(.3, .3, .3)' }),
+        animate(100)
+      ]),
+      transition('* => void', [
+        animate(300, keyframes([
+          style({opacity: 0.8, transform: 'translateX(+20px)'}),
+          style({opacity: 0.8, transform: 'translateX(-150px)'}),
+          style({opacity: 1, transform: 'scale(1)'}),
+          style({opacity: 1, transform: 'translateX(100%)'})
+        ]))
+      ])
     ])
   ]
 })
