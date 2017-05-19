@@ -44,7 +44,7 @@
         </div>
         <div class="field">
           <p class="control is-expanded">
-            <textarea id="txtDescricao" class="textarea" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="perfil.descricao" #perfilDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
+            <textarea id="inputDescricao" class="textarea" title="{{'LABEL_DESCRICAO' | i18n}}" rows="5" [(ngModel)]="perfil.descricao" #perfilDescricao="ngModel" name="descricao" required maxlength="500" [disabled]="acao.isAcaoVisualizar()"></textarea>
             <validation-message [for]="perfilDescricao" [form]="formPerfil"></validation-message>
           </p>
         </div>
