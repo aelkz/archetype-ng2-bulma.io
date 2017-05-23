@@ -33,12 +33,16 @@ export class UiSidenavComponent implements AfterViewInit, OnInit {
 
       function _initSideNav() {
         function openNav(main, sidenav) {
+          console.log('ui-sidenav.openNav() called');
           var width = $.IsAwesome.options.sideBarWidth;
+
           $(sidenav).css('width', width);
           $(main).addClass('overlay');
         }
 
         function closeNav(main, sidenav) {
+          console.log('ui-sidenav.closeNav() called');
+
           $(sidenav).css('width', '0px');
           $(main).removeClass('overlay');
         }

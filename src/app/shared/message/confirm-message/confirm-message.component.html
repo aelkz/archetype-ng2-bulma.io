@@ -4,7 +4,7 @@
         <div class="cd-popup-container">
             <p>{{item.msg}}</p>
             <ul class="cd-buttons">
-                <li><a href="#" onclick="return false;" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_YES' | i18n}}</a></li>
+                <li><a href="#" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_YES' | i18n}}</a></li>
             </ul>
             <a href="#" class="cd-popup-close img-replace" [@slideInOut]="" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_OK' | i18n}}</a>
         </div> <!-- cd-popup-container -->
@@ -15,8 +15,8 @@
         <div class="cd-popup-container">
             <p>{{item.msg}}</p>
             <ul class="cd-buttons">
-                <li><a href="#"  onclick="return false;" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_YES' | i18n}}</a></li>
-                <li><a href="#"  onclick="return false;" (click)="confirmNo(item)">{{'LABEL_CONFIRM_NO' | i18n}}</a></li>
+                <li><a href="#" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_YES' | i18n}}</a></li>
+                <li><a href="#" (click)="confirmNo(item)">{{'LABEL_CONFIRM_NO' | i18n}}</a></li>
             </ul>
             <a href="#" class="cd-popup-close img-replace" [@slideInOut]="" (click)="confirmNo(item)">{{'LABEL_CONFIRM_TITLE' | i18n}}</a>
         </div> <!-- cd-popup-container -->
