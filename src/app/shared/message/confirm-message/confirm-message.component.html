@@ -1,31 +1,26 @@
-<div *ngFor="let item of items" style="position: absolute; z-index: 100; top: 100px; width: 100%">
+<div *ngFor="let item of items">
   <div *ngIf="item.isConfirmTypeOk()">
-    <article class="message is-primary" [@slideInOut]="" role="info" >
-      <div class="message-header">
-        <p>{{'LABEL_CONFIRM_TITLE' | i18n}}</p>
-        <button class="delete" [@slideInOut]="" (click)="confirmYesOk(item)"></button>
-      </div>
-      <div class="message-body">
-        {{item.msg}}
-      </div>
-      <div class="message-body">
-        <button type="button" class="button is-primary" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_OK' | i18n}}</button>
-      </div>
-    </article>
+    <div class="cd-popup is-visible" [@slideInOut]="" role="ok">
+        <div class="cd-popup-container">
+            <p>{{item.msg}}</p>
+            <ul class="cd-buttons">
+                <li><a href="#" onclick="return false;" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_YES' | i18n}}</a></li>
+            </ul>
+            <a href="#" class="cd-popup-close img-replace" [@slideInOut]="" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_OK' | i18n}}</a>
+        </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup -->
   </div>
   <div *ngIf="item.isConfirmTypeYesNo()">
-    <article class="message is-warning" [@slideInOut]="" role="alert" >
-      <div class="message-header">
-        <p>{{'LABEL_CONFIRM_TITLE' | i18n}}</p>
-        <button class="delete" [@slideInOut]="" (click)="confirmNo(item)"></button>
-      </div>
-      <div class="message-body">
-        {{item.msg}}
-      </div>
-      <div class="message-body">
-        <button type="button" class="button is-danger" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_YES' | i18n}}</button>
-        <button type="button" class="button is-primary" (click)="confirmNo(item)">{{'LABEL_CONFIRM_NO' | i18n}}</button>
-      </div>
-    </article>
+    <div class="cd-popup is-visible" [@slideInOut]="" role="alert">
+        <div class="cd-popup-container">
+            <p>{{item.msg}}</p>
+            <ul class="cd-buttons">
+                <li><a href="#"  onclick="return false;" (click)="confirmYesOk(item)">{{'LABEL_CONFIRM_YES' | i18n}}</a></li>
+                <li><a href="#"  onclick="return false;" (click)="confirmNo(item)">{{'LABEL_CONFIRM_NO' | i18n}}</a></li>
+            </ul>
+            <a href="#" class="cd-popup-close img-replace" [@slideInOut]="" (click)="confirmNo(item)">{{'LABEL_CONFIRM_TITLE' | i18n}}</a>
+        </div> <!-- cd-popup-container -->
+    </div> <!-- cd-popup -->
   </div>
 </div>
+
